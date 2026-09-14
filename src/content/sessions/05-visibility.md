@@ -5,6 +5,8 @@ description:
   memory of your quarter actually comes from, and how to put things in it.
 week: 5
 date: 2027-03-25
+teachers:
+  - wen-okafor
 trick: Post progress in the public channel, never in a direct message.
 buildsOn: [3, 4]
 spec:

@@ -5,6 +5,8 @@ description:
   room. This week you learn to write one that survives being summarised.
 week: 4
 date: 2027-03-18
+teachers:
+  - wen-okafor
 trick: Quantify everything, including the parts you made up.
 buildsOn: [1, 2]
 spec:

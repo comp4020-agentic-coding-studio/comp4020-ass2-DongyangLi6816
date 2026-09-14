@@ -6,6 +6,8 @@ description:
   doing anything.
 week: 2
 date: 2027-03-04
+teachers:
+  - wen-okafor
 trick: Split one ticket into five.
 buildsOn: [1]
 spec:

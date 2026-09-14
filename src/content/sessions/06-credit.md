@@ -6,6 +6,8 @@ description: >-
   email.
 week: 6
 date: 2027-04-01
+teachers:
+  - wen-okafor
 trick: Be the person who writes the launch email.
 buildsOn: [5]
 spec:

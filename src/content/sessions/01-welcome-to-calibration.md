@@ -5,6 +5,8 @@ description:
   find out what happens in that room and what your manager carries in with them.
 week: 1
 date: 2027-02-25
+teachers:
+  - wen-okafor
 trick: Know the rubric better than your manager does.
 buildsOn: []
 spec:

@@ -5,6 +5,8 @@ description:
   org chart. This week you work out who speaks for you and who never will.
 week: 3
 date: 2027-03-11
+teachers:
+  - wen-okafor
 trick: The skip-level coffee.
 buildsOn: [1]
 spec:

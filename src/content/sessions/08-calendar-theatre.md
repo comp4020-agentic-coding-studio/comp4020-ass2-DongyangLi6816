@@ -5,6 +5,8 @@ description:
   what the proxies are and how cheap they are to manufacture.
 week: 8
 date: 2027-04-29
+teachers:
+  - wen-okafor
 trick: Schedule the email for 11:03 pm.
 buildsOn: [5]
 spec:

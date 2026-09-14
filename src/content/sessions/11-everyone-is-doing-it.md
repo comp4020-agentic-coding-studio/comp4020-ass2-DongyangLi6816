@@ -6,6 +6,8 @@ description:
   meeting is held on your work.
 week: 11
 date: 2027-05-20
+teachers:
+  - wen-okafor
 trick: Leave before the equilibrium arrives.
 buildsOn: [2, 10]
 spec:

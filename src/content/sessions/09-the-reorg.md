@@ -6,6 +6,8 @@ description:
   exists.
 week: 9
 date: 2027-05-06
+teachers:
+  - wen-okafor
 trick: Become the only person who understands the system you built.
 buildsOn: [3, 7]
 spec:

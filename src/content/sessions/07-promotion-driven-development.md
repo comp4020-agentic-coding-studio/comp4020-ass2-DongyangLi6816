@@ -5,6 +5,8 @@ description:
   maintenance does not. This week you plan a rebuild nobody needs.
 week: 7
 date: 2027-04-22
+teachers:
+  - wen-okafor
 trick: Rebuild something that already works, and launch it.
 buildsOn: [2, 6]
 spec:

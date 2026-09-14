@@ -6,6 +6,8 @@ description:
   beat it.
 week: 12
 date: 2027-05-27
+teachers:
+  - wen-okafor
 trick: There isn't one. You write the rubric now.
 buildsOn: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 spec:
