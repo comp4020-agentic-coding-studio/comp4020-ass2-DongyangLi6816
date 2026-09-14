@@ -15,6 +15,8 @@ export async function getStaticPaths() {
 
 const { session } = Astro.props;
 const { Content } = await render(session);
+// `trick` is a course-specific key the schema passes through untyped.
+const trick = typeof session.data.trick === "string" ? session.data.trick : undefined;
 ---
 
 <ContentLayout
@@ -23,11 +25,19 @@ const { Content } = await render(session);
   {...siteConfig}
 >
   <p><strong>{formatCourseDate(session.data.date)}</strong></p>
+  {trick && <p class="trick"><strong>This week's trick:</strong> {trick}</p>}
   <Content />
   <SpecList spec={session.data.spec}>
-    What you bring to the session. Written so a reader can tell whether it has
-    been met without asking you.
+    Before you leave the room. Each line is something you can check yourself.
   </SpecList>
   <TeachingTeam teachers={session.data.teachers} />
   <RelatedContent entry={session} collections={graphCollections} />
 </ContentLayout>
+
+<style>
+  .trick {
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--at-accent, currentColor);
+    background: var(--at-bg-alt, transparent);
+  }
+</style>

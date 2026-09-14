@@ -1,0 +1,45 @@
+---
+title: Now you're the manager
+description:
+  The last stand-up hands you the other side of the table. You bring a review
+  system you designed, and the rest of the room spends the session trying to
+  beat it.
+week: 12
+date: 2027-05-27
+trick: There isn't one. You write the rubric now.
+buildsOn: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+spec:
+  - your review design for Assessment 4 was submitted on Monday
+  - you have attacked at least two other designs with a named trick from this course
+  - you have written down the trade-off your own design chose, and what it gave up
+---
+
+Every trick in this course was a design flaw with a person standing in it.
+This week you are the designer.
+
+## Bring
+
+Your Assessment 4 design, submitted on Monday: a review system for a team of
+ten engineers. Also bring your brag document from week 4, which is now twelve
+weeks long and is the last thing this course asks you to look at.
+
+## The trick
+
+There is no trick this week. You are writing the rubric, and the room has
+spent eleven weeks learning how to read one.
+
+## What happens
+
+Designs are pinned around the room. You spend the first half attacking other
+people's: for each one, name the trick from this course that beats it, or
+concede that you cannot find one. You spend the second half at your own
+design, reading what was pinned to it. Then the last twenty minutes of the
+course: each person says the trade-off their design chose, out loud, and what
+it gave up to get it. A design that claims no trade-off is the one everybody
+beat.
+
+## How you know it worked
+
+Your design survived at least one trick it was aimed at and lost to at least
+one it was not, and you can say which and why. Submit the written
+justification by Friday. That is the course.
