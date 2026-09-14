@@ -1,8 +1,45 @@
 ---
-import MdxPageLayout from "astro-theme-university/layouts/MdxPageLayout.astro";
+import type { ImageMetadata } from "astro";
+import { resolveHeroImage } from "astro-theme-university/images";
+import BaseLayout from "astro-theme-university/layouts/BaseLayout.astro";
+import type { RemoteImage } from "astro-theme-university/types";
 import { siteConfig } from "../site-config";
+import "../styles/site.css";
+
+// The theme's MdxPageLayout renders a hero only when a page carries both a
+// heroTitle and a heroImage, and no heading at all otherwise, so the starter's
+// index pages shipped without an h1. This wrapper does what the theme's own
+// ContentLayout does on detail routes: a plain h1 from the title whenever
+// there is no hero, above the description-as-lead paragraph.
+interface Props {
+  /** Frontmatter, supplied automatically when the page is Markdown or MDX. */
+  frontmatter?: Record<string, unknown>;
+  /** Render the frontmatter description as the page's lead paragraph. */
+  lead?: boolean;
+  [key: string]: unknown;
+}
+
+const { frontmatter, lead = true, ...direct } = Astro.props;
+const { title, description, heroTitle, heroImage, ...rest } = (frontmatter ?? direct) as {
+  title: string;
+  description?: string;
+  heroTitle?: string;
+  heroImage?: string | ImageMetadata | RemoteImage;
+  [key: string]: unknown;
+};
+const hasHero = Boolean(heroTitle && resolveHeroImage(heroImage));
 ---
 
-<MdxPageLayout siteConfig={siteConfig} {...Astro.props}>
+<BaseLayout
+  title={`${title} — ${siteConfig.name}`}
+  description={description}
+  {...siteConfig}
+  {...rest}
+  heroTitle={heroTitle}
+  heroImage={heroImage}
+>
+  <slot name="head" slot="head" />
+  {!hasHero && <h1>{heroTitle ?? title}</h1>}
+  {lead && description && <p class="lead">{description}</p>}
   <slot />
-</MdxPageLayout>
+</BaseLayout>
