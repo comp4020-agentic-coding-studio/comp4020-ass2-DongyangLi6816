@@ -1,23 +1,41 @@
 ---
-title: Second lecture
+title: Goodhart's law for beginners
 description:
-  Week 2 — the first substantive material, and the run-up to the first review
+  Goodhart, Campbell, and the paraphrase everyone quotes. What happens to a
+  measure once the people it measures know it is a target.
 week: 2
-date: 2027-03-01
+date: 2027-03-02
 teachers:
-  - idris-fenn
+  - ingrid-solano
+mechanism: A measure used as a target gets moved by the cheapest available means, which is rarely the thing it was meant to measure.
+sources:
+  - title: Goodhart's law
+    url: https://en.wikipedia.org/wiki/Goodhart%27s_law
+  - title: Campbell's law
+    url: https://en.wikipedia.org/wiki/Campbell%27s_law
+  - title: Goodhart's law in engineering metrics
+    url: https://codepulsehq.com/guides/goodharts-law-engineering-metrics
 related:
   - sessions/02-goodharts-law
-  - assessments/assignment-1
 ---
 
-<!-- STARTER_CONTENT: replace this lecture, then remove this comment. -->
+Charles Goodhart wrote in 1975 that any observed statistical regularity will
+tend to collapse once pressure is placed on it for control purposes. Donald
+Campbell wrote in 1979 that the more a quantitative indicator is used for
+decision-making, the more it will be corrupted and the more it will corrupt
+the process it was meant to monitor. The version you have heard, "when a
+measure becomes a target, it ceases to be a good measure", is Marilyn
+Strathern's 1997 paraphrase, and it is the one that fits on a slide.
 
-Replace this page. It exists so the lectures listing sorts by week and the
-related block has more than one edge to draw.
+Software teams rediscover this every quarter. Pay by lines of code and the
+code gets longer. Count closed tickets and tickets get smaller. Set a velocity
+target and story points inflate. None of this requires anyone to be
+dishonest. It requires only that the number be watched and that moving it be
+cheaper than doing the work.
 
 ## Outline
 
-- the first substantive material, and where it shows up in practice
-- what the first review is looking for
-- reading before next week
+- the three phrasings, and who actually said which
+- lines, tickets, points: three metrics and how each one died
+- why the dashboard cannot tell the difference
+- what a measure can still do once everybody knows it is a target

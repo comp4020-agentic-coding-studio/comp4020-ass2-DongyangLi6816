@@ -16,12 +16,40 @@ export async function getStaticPaths() {
 const { lecture } = Astro.props;
 const { Content } = await render(lecture);
 const title = `Week ${lecture.data.week}: ${lecture.data.title}`;
+// `mechanism` and `sources` are course-specific keys the schema passes through untyped.
+const mechanism = typeof lecture.data.mechanism === "string" ? lecture.data.mechanism : undefined;
+const sources = Array.isArray(lecture.data.sources)
+  ? (lecture.data.sources as { title: string; url: string }[])
+  : [];
 ---
 
 <ContentLayout title={title} description={lecture.data.description} {...siteConfig}>
   <p><strong>{formatCourseDate(lecture.data.date)}</strong></p>
   {lecture.data.slides && <p><a href={withBase(lecture.data.slides)}>Open the slides</a></p>}
+  {mechanism && <p class="mechanism"><strong>Why it works:</strong> {mechanism}</p>}
   <Content />
+  {
+    sources.length > 0 && (
+      <>
+        <h2>Sources</h2>
+        <ul>
+          {sources.map((source) => (
+            <li>
+              <a href={source.url}>{source.title}</a>
+            </li>
+          ))}
+        </ul>
+      </>
+    )
+  }
   <TeachingTeam teachers={lecture.data.teachers} />
   <RelatedContent entry={lecture} collections={graphCollections} />
 </ContentLayout>
+
+<style>
+  .mechanism {
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--at-accent, currentColor);
+    background: var(--at-bg-alt, transparent);
+  }
+</style>
