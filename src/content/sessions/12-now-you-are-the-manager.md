@@ -22,8 +22,8 @@ This week you are the designer.
 ## Bring
 
 Your Assessment 4 design, submitted on Monday: a review system for a team of
-ten engineers. Also bring your brag document from week 4, which is now twelve
-weeks long and is the last thing this course asks you to look at.
+ten engineers. Also bring your brag document from week 4, which by now runs to
+nine weeks and is the last thing this course asks you to look at.
 
 ## The trick
 
