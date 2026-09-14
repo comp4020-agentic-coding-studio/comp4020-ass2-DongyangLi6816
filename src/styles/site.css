@@ -1,0 +1,25 @@
+/* Site-wide styling on top of the theme's brand tokens. Imported by
+   PageLayout (every Markdown and MDX page) and by the home page, which
+   renders through the theme's ContentLayout instead. */
+
+/* The hero artwork keeps its rating curve in the right third of the frame,
+   clear of the title. The theme crops a hero from the centre, which at phone
+   width left the curve outside the frame entirely; anchor the crop to the
+   right edge so the curve stays in view at every width. */
+.at-hero-image {
+  object-position: right center;
+}
+
+/* At phone width the title fills the whole hero band, so any artwork behind
+   it collides with the words. Drop the picture there and keep the band in the
+   artwork's own ink, so the page opens the same way at every width and the
+   curve is saved for screens with room beside the title. */
+@media (max-width: 48rem) {
+  .at-hero {
+    background: #1f1a14;
+  }
+
+  .at-hero-image {
+    display: none;
+  }
+}

@@ -7,7 +7,11 @@
 // while a raster hero is re-encoded into AVIF srcset variants, and Chrome
 // painted those variants of this flat artwork as blank. The curve sits on the
 // right, clear of the title, with no axis labels: they collided with the
-// title at desktop width and were lost under the scrim anyway.
+// title at desktop width and were lost under the scrim anyway. The frame is
+// wide (2560x900) and the curve sits mid-height because the theme crops a
+// hero to cover its band: a taller frame lost the "you" label off the top
+// once the band was at its minimum height, and the site anchors the crop to
+// the right edge so the curve survives phone width too.
 import { writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
@@ -57,10 +61,10 @@ function curve(
 
 function hero(): string {
   const W = 2560;
-  const H = 1086;
+  const H = 900;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
   <rect width="${W}" height="${H}" fill="${INK}" />
-  ${curve(W * 0.62, H * 0.28, W * 0.32, H * 0.4, 48, CREAM, ["#e0a53a", GOLD], false)}
+  ${curve(W * 0.62, H * 0.30, W * 0.32, H * 0.42, 48, CREAM, ["#e0a53a", GOLD], false)}
 </svg>`;
 }
 
