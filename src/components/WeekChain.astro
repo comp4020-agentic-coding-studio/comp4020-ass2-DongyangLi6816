@@ -1,0 +1,120 @@
+---
+/**
+ * Where a week sits in the argument: the earlier weeks it depends on, and the
+ * assessments it feeds. Both edges are already in the content and already
+ * asserted by `spec/course.test.ts`; this is the first place a reader sees them.
+ */
+import { withBase } from "astro-theme-university/url";
+import type { AssessmentRef, WeeklyCollection, WeekRef } from "../lib/week-graph";
+
+interface Props {
+  collection: WeeklyCollection;
+  /** What one entry of this collection is called, for screen-reader labels. */
+  noun: string;
+  buildsOn: WeekRef[];
+  feeds: AssessmentRef[];
+}
+
+const { collection, noun, buildsOn, feeds } = Astro.props;
+---
+
+<aside class="week-chain" aria-label="Where this week sits in the course">
+  <dl>
+    <dt>Builds on</dt>
+    <dd>
+      {
+        buildsOn.length === 0 ? (
+          <span class="chain-none">nothing — the course starts here</span>
+        ) : (
+          buildsOn.map((entry) => (
+            <a
+              class="chain-link"
+              href={withBase(`/${collection}/${entry.id}/`)}
+              aria-label={`Week ${entry.week} ${noun}: ${entry.title}`}
+            >
+              week {entry.week}
+            </a>
+          ))
+        )
+      }
+    </dd>
+    <dt>Feeds</dt>
+    <dd>
+      {
+        feeds.map((assessment) => (
+          <a
+            class="chain-link"
+            href={withBase(`/assessments/${assessment.id}/`)}
+            aria-label={`${assessment.title}, worth ${assessment.weight} per cent`}
+          >
+            {assessment.title} <span class="chain-weight">{assessment.weight}%</span>
+          </a>
+        ))
+      }
+    </dd>
+  </dl>
+</aside>
+
+<style>
+  .week-chain {
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+    padding-block: var(--at-spacing-sm);
+    border-block: 1px solid var(--at-divider);
+  }
+
+  .week-chain dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.4rem 1rem;
+    align-items: baseline;
+    margin: 0;
+  }
+
+  .week-chain dt {
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--at-text-secondary);
+  }
+
+  .week-chain dd {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.5rem;
+    margin: 0;
+    font-size: var(--at-font-size-sm);
+  }
+
+  .chain-link {
+    padding: 0.2rem 0.55rem;
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    text-decoration: none;
+  }
+
+  .chain-link:hover,
+  .chain-link:focus-visible {
+    border-color: var(--at-accent);
+  }
+
+  .chain-weight {
+    color: var(--at-text-secondary);
+  }
+
+  .chain-none {
+    color: var(--at-text-secondary);
+  }
+
+  /* One label per line at phone width, so neither column has to squeeze. */
+  @media (max-width: 30rem) {
+    .week-chain dl {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+
+    .week-chain dd:not(:last-child) {
+      margin-block-end: 0.6rem;
+    }
+  }
+</style>

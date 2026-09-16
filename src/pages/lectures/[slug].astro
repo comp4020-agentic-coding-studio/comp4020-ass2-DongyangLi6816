@@ -5,7 +5,9 @@ import RelatedContent from "astro-course-university/components/RelatedContent.as
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import { withBase } from "astro-theme-university/url";
 import TeachingTeam from "../../components/TeachingTeam.astro";
+import WeekChain from "../../components/WeekChain.astro";
 import { formatCourseDate } from "../../lib/dates";
+import { getWeekContext } from "../../lib/week-graph";
 import { graphCollections, siteConfig } from "../../site-config";
 
 export async function getStaticPaths() {
@@ -21,11 +23,18 @@ const mechanism = typeof lecture.data.mechanism === "string" ? lecture.data.mech
 const sources = Array.isArray(lecture.data.sources)
   ? (lecture.data.sources as { title: string; url: string }[])
   : [];
+const context = await getWeekContext(lecture.data.week, "lectures");
 ---
 
 <ContentLayout title={title} description={lecture.data.description} {...siteConfig}>
   <p><strong>{formatCourseDate(lecture.data.date)}</strong></p>
   {lecture.data.slides && <p><a href={withBase(lecture.data.slides)}>Open the slides</a></p>}
+  <WeekChain
+    collection="lectures"
+    noun="lecture"
+    buildsOn={context.buildsOn}
+    feeds={context.feeds}
+  />
   {mechanism && <p class="mechanism"><strong>Why it works:</strong> {mechanism}</p>}
   <Content />
   {

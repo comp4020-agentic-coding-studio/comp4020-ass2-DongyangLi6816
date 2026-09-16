@@ -5,7 +5,9 @@ import RelatedContent from "astro-course-university/components/RelatedContent.as
 import SpecList from "astro-course-university/components/SpecList.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import TeachingTeam from "../../components/TeachingTeam.astro";
+import WeekChain from "../../components/WeekChain.astro";
 import { formatCourseDate } from "../../lib/dates";
+import { getWeekContext } from "../../lib/week-graph";
 import { graphCollections, sessionLabels, siteConfig } from "../../site-config";
 
 export async function getStaticPaths() {
@@ -17,6 +19,7 @@ const { session } = Astro.props;
 const { Content } = await render(session);
 // `trick` is a course-specific key the schema passes through untyped.
 const trick = typeof session.data.trick === "string" ? session.data.trick : undefined;
+const context = await getWeekContext(session.data.week, "sessions");
 ---
 
 <ContentLayout
@@ -25,6 +28,12 @@ const trick = typeof session.data.trick === "string" ? session.data.trick : unde
   {...siteConfig}
 >
   <p><strong>{formatCourseDate(session.data.date)}</strong></p>
+  <WeekChain
+    collection="sessions"
+    noun={sessionLabels.singular.toLowerCase()}
+    buildsOn={context.buildsOn}
+    feeds={context.feeds}
+  />
   {trick && <p class="trick"><strong>This week's trick:</strong> {trick}</p>}
   <Content />
   <SpecList spec={session.data.spec}>
