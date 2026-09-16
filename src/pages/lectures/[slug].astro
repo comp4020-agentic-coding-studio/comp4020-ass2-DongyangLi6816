@@ -6,6 +6,7 @@ import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import { withBase } from "astro-theme-university/url";
 import TeachingTeam from "../../components/TeachingTeam.astro";
 import WeekChain from "../../components/WeekChain.astro";
+import WeekNav from "../../components/WeekNav.astro";
 import { formatCourseDate } from "../../lib/dates";
 import { getWeekContext } from "../../lib/week-graph";
 import { graphCollections, siteConfig } from "../../site-config";
@@ -53,6 +54,14 @@ const context = await getWeekContext(lecture.data.week, "lectures");
   }
   <TeachingTeam teachers={lecture.data.teachers} />
   <RelatedContent entry={lecture} collections={graphCollections} />
+  <WeekNav
+    collection="lectures"
+    label="Lectures"
+    week={context.week}
+    total={context.total}
+    previous={context.previous}
+    next={context.next}
+  />
 </ContentLayout>
 
 <style>

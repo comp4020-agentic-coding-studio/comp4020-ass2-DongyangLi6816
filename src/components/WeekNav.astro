@@ -1,0 +1,142 @@
+---
+/**
+ * Step between consecutive weeks without going back to the index.
+ *
+ * The theme's `Pagination.astro` would read "Page 9 of 12" here, and a reader
+ * of this site recognises weeks, not pages --- so this says week.
+ */
+import { withBase } from "astro-theme-university/url";
+import type { WeeklyCollection, WeekRef } from "../lib/week-graph";
+
+interface Props {
+  collection: WeeklyCollection;
+  /** Plural name of the collection, for the landmark label. */
+  label: string;
+  week: number;
+  total: number;
+  previous?: WeekRef;
+  next?: WeekRef;
+}
+
+const { collection, label, week, total, previous, next } = Astro.props;
+const href = (entry: WeekRef) => withBase(`/${collection}/${entry.id}/`);
+// The arrow is decoration, so it is spelled out for a screen reader instead
+// of being read as a glyph in the middle of the week's title.
+const stepLabel = (direction: string, entry: WeekRef) =>
+  `${direction}: week ${entry.week}, ${entry.title}`;
+---
+
+<nav class="week-nav" aria-label={label}>
+  {
+    previous ? (
+      <a
+        class="week-nav-step previous"
+        rel="prev"
+        href={href(previous)}
+        aria-label={stepLabel("Previous", previous)}
+      >
+        <span class="week-nav-week" aria-hidden="true">
+          &larr; Week {previous.week}
+        </span>
+        <span class="week-nav-title">{previous.title}</span>
+      </a>
+    ) : (
+      <span class="week-nav-step empty" />
+    )
+  }
+  <p class="week-nav-status">Week {week} of {total}</p>
+  {
+    next ? (
+      <a
+        class="week-nav-step next"
+        rel="next"
+        href={href(next)}
+        aria-label={stepLabel("Next", next)}
+      >
+        <span class="week-nav-week" aria-hidden="true">
+          Week {next.week} &rarr;
+        </span>
+        <span class="week-nav-title">{next.title}</span>
+      </a>
+    ) : (
+      <span class="week-nav-step empty" />
+    )
+  }
+</nav>
+
+<style>
+  .week-nav {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    gap: var(--at-spacing-sm) var(--at-spacing-md);
+    align-items: center;
+    margin-block-start: var(--at-spacing-xl);
+    padding-block-start: var(--at-spacing-md);
+    border-block-start: 1px solid var(--at-divider);
+  }
+
+  .week-nav-step {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    text-decoration: none;
+  }
+
+  /* Hug the words. A grid cell of `1fr` would otherwise stretch the link, and
+     with it the focus ring, right across a third of the page. */
+  .week-nav-step.previous {
+    justify-self: start;
+  }
+
+  .week-nav-step.next {
+    justify-self: end;
+    text-align: end;
+  }
+
+  .week-nav-week {
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .week-nav-title {
+    color: var(--at-text);
+    font-size: var(--at-font-size-sm);
+  }
+
+  a.week-nav-step:hover .week-nav-title,
+  a.week-nav-step:focus-visible .week-nav-title {
+    text-decoration: underline;
+  }
+
+  .week-nav-status {
+    margin: 0;
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Three columns do not fit a phone, and truncating a week's title hides the
+     one thing that tells you whether to go there. Stack instead. */
+  @media (max-width: 34rem) {
+    .week-nav {
+      grid-template-columns: 1fr;
+      justify-items: start;
+    }
+
+    .week-nav-step.next {
+      text-align: start;
+    }
+
+    .week-nav-step.empty {
+      display: none;
+    }
+
+    .week-nav-status {
+      order: -1;
+    }
+  }
+</style>

@@ -6,6 +6,7 @@ import SpecList from "astro-course-university/components/SpecList.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import TeachingTeam from "../../components/TeachingTeam.astro";
 import WeekChain from "../../components/WeekChain.astro";
+import WeekNav from "../../components/WeekNav.astro";
 import { formatCourseDate } from "../../lib/dates";
 import { getWeekContext } from "../../lib/week-graph";
 import { graphCollections, sessionLabels, siteConfig } from "../../site-config";
@@ -41,6 +42,14 @@ const context = await getWeekContext(session.data.week, "sessions");
   </SpecList>
   <TeachingTeam teachers={session.data.teachers} />
   <RelatedContent entry={session} collections={graphCollections} />
+  <WeekNav
+    collection="sessions"
+    label={sessionLabels.plural}
+    week={context.week}
+    total={context.total}
+    previous={context.previous}
+    next={context.next}
+  />
 </ContentLayout>
 
 <style>
