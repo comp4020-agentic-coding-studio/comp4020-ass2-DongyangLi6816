@@ -56,6 +56,23 @@ exists because a check here once passed while measuring a path nobody takes.
 - **Taste is mine.** Too fast, too thin, reads as the wrong kind of object:
   none of that is settled by a measurement. Show me the state and ask.
 
+## Keep an evidence file
+
+Every deliverable keeps `docs/notes/harness-evidence.md`: the failures caught
+while doing the work, what each cost, and the harness-level fix. Create it if
+it isn't there --- a new week's repo won't have one, because it stays behind
+with the prototype while this file carries forward. Write the entry when
+something goes wrong, not at the end: the detail that makes an entry useful is
+gone by then.
+
+An entry is what actually happened, what it cost, and what would have caught it
+earlier, as either a rule or a sensor. Nothing goes in that I did not observe
+in the session.
+
+Only `CLAUDE.md` and the sensors in `check` carry forward, so a lesson that
+proves durable is promoted into one of those before the week ends, and the
+entry says which.
+
 ## This file is yours
 
 A starting point, not a rulebook: what you add to it is the harness, and the
