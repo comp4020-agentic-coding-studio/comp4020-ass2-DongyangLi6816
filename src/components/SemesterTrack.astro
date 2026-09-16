@@ -1,0 +1,241 @@
+---
+/**
+ * The twelve weeks, in their four blocks, with the week each assessment falls
+ * due. Every week carries a mark for its trick; week 10 carries an empty one,
+ * because the one week the course teaches no trick is the week the course is
+ * arguing about. `spec/course.test.ts` holds that to exactly one week, and
+ * `getSemester` reads it rather than assuming it.
+ */
+import { withBase } from "astro-theme-university/url";
+import { getSemester } from "../lib/semester";
+import type { SemesterWeek } from "../lib/semester";
+
+const blocks = await getSemester();
+
+function weekLabel(week: SemesterWeek, blockName: string): string {
+  const due = week.due
+    .map((item) => `${item.title} is due, worth ${item.weight} per cent.`)
+    .join(" ");
+  const trick = week.hasTrick ? "A trick this week." : "No trick this week.";
+  // "Block:" prefixed, or the block name reads as a clause about the week
+  // rather than as the group the week belongs to.
+  return `Week ${week.week}, ${week.title}. Block: ${blockName}. ${trick} ${due}`.trim();
+}
+---
+
+<figure class="semester">
+  <ol class="semester-blocks">
+    {
+      blocks.map((block) => (
+        <>
+          <li class="semester-block">
+            <p class="block-name">{block.name}</p>
+            <p class="block-gloss">{block.gloss}</p>
+            <ol class="block-weeks" aria-label={block.name}>
+              {block.weeks.map((week) => (
+                <li>
+                  <a
+                    class="week"
+                    href={withBase(`/lectures/${week.id}/`)}
+                    aria-label={weekLabel(week, block.name)}
+                  >
+                    <span class="week-number" aria-hidden="true">
+                      {week.week}
+                    </span>
+                    <span
+                      class:list={["week-trick", week.hasTrick ? "filled" : "empty"]}
+                      aria-hidden="true"
+                    />
+                    <span class="week-due" aria-hidden="true">
+                      {week.due.map((item) => `${item.weight}%`).join(" ")}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ol>
+          </li>
+          {block.breakAfter && <li class="semester-break">Two-week break</li>}
+        </>
+      ))
+    }
+  </ol>
+
+  <p class="semester-legend">
+    <span class="legend-item">
+      <span class="week-trick filled" aria-hidden="true"></span> a trick that week
+    </span>
+    <span class="legend-item">
+      <span class="week-trick empty" aria-hidden="true"></span> no trick
+    </span>
+    <span class="legend-item"><span class="legend-due">15%</span> an assessment falls due</span>
+  </p>
+
+  <figcaption>Twelve weeks in four blocks. Each week links to its lecture.</figcaption>
+</figure>
+
+<style>
+  .semester {
+    margin: var(--at-spacing-lg) 0 var(--at-spacing-xl);
+  }
+
+  /* Three shared rows --- name, gloss, weeks --- so that a block whose gloss
+     wraps to three lines does not push its weeks below its neighbour's. The
+     twelve cells have to read as one track; a stepped one is a different
+     picture. */
+  .semester-blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: var(--at-spacing-md);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .semester-block,
+  .semester-break {
+    grid-row: span 3;
+  }
+
+  .semester-block {
+    display: grid;
+    grid-template-rows: subgrid;
+    gap: 0;
+  }
+
+  .block-name {
+    align-self: end;
+    margin: 0 0 0.15rem;
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .block-gloss {
+    align-self: start;
+    margin: 0 0 0.5rem;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .block-weeks {
+    align-self: start;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .block-weeks li {
+    display: grid;
+  }
+
+  .week {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.7rem 0.2rem;
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    text-decoration: none;
+  }
+
+  .week:hover,
+  .week:focus-visible {
+    border-color: var(--at-accent);
+  }
+
+  .week-number {
+    color: var(--at-text);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-base);
+  }
+
+  /* A filled mark for a week with a trick, an empty one for the week without.
+     The ring is the point of the figure: the slot is there and nothing is in
+     it, which is not the same as the mark being missing. */
+  .week-trick {
+    width: 0.62rem;
+    height: 0.62rem;
+    border: 1px solid var(--at-accent);
+    border-radius: 50%;
+  }
+
+  .week-trick.filled {
+    background: var(--at-accent);
+  }
+
+  /* Fixed, not `min-height: 1em`: an em of the badge's own type is shorter
+     than the line box it renders in, which left every week with an assessment
+     taller than its neighbours. */
+  .week-due {
+    min-height: 1rem;
+    line-height: 1rem;
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+  }
+
+  .semester-break {
+    display: grid;
+    place-items: center;
+    padding-inline: 0.5rem;
+    /* Physical, not logical: the label is set vertically, and under
+       `vertical-rl` the inline-start edge is the top, which drew the rule as a
+       stub across the label's head instead of a line down the semester. */
+    border-left: 1px dashed var(--at-border);
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+  }
+
+  .semester-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1.25rem;
+    margin-block: var(--at-spacing-md) 0;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .legend-due {
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+  }
+
+  .semester figcaption {
+    margin-block-start: 0.5rem;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+
+  /* Four blocks side by side need more room than a phone has. Stack them, and
+     lay the break across the full width where it still reads as an interval. */
+  @media (max-width: 48rem) {
+    .semester-blocks {
+      grid-template-columns: 1fr;
+    }
+
+    .semester-break {
+      padding-block: 0.35rem;
+      border-left: 0;
+      border-top: 1px dashed var(--at-border);
+      border-bottom: 1px dashed var(--at-border);
+      writing-mode: horizontal-tb;
+    }
+  }
+</style>

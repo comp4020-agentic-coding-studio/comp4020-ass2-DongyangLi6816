@@ -3,6 +3,7 @@ import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import { withBase } from "astro-theme-university/url";
+import SemesterTrack from "../components/SemesterTrack.astro";
 import heroImage from "../assets/images/hero-home.svg";
 import "../styles/site.css";
 import { courseMeta } from "../course-config";
@@ -41,12 +42,7 @@ import { sessionLabels, siteConfig } from "../site-config";
   </p>
 
   <h2>How the semester runs</h2>
-  <ol class="blocks">
-    <li><strong>Read the system</strong> (weeks 1 to 3): how the rating is actually decided</li>
-    <li><strong>The tricks</strong> (weeks 4 to 6): the self-review, visibility, credit</li>
-    <li><strong>Harder tricks</strong> (weeks 7 to 9): the ones that depend on things you do not control</li>
-    <li><strong>When it stops working</strong> (weeks 10 to 12): the layoff list, the equilibrium, and the design</li>
-  </ol>
+  <SemesterTrack />
   <p>
     Lectures are on Tuesdays and give you the mechanism. Stand-ups are on
     Thursdays and give you the trick. Each week's trick has a source; no
@@ -85,14 +81,6 @@ import { sessionLabels, siteConfig } from "../site-config";
     margin-block: 0 2rem;
     padding: 0;
     list-style: none;
-  }
-
-  .blocks {
-    padding-inline-start: 1.25rem;
-  }
-
-  .blocks li {
-    margin-block: 0.4rem;
   }
 
   .course-tags li {
