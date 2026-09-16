@@ -3,6 +3,7 @@ import Card from "astro-theme-university/components/Card.astro";
 import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import { withBase } from "astro-theme-university/url";
+import AssessmentWeights from "../components/AssessmentWeights.astro";
 import SemesterTrack from "../components/SemesterTrack.astro";
 import heroImage from "../assets/images/hero-home.svg";
 import "../styles/site.css";
@@ -50,6 +51,7 @@ import { sessionLabels, siteConfig } from "../site-config";
   </p>
 
   <h2>A note on marks</h2>
+  <AssessmentWeights />
   <p>
     Marks in this course are calibrated to a curve you will not be shown. The
     <a href={withBase("/policies/")}>policies page</a> says so in full. It is the only

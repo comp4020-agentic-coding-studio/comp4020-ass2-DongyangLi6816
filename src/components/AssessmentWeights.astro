@@ -1,0 +1,98 @@
+---
+/**
+ * The four assessments drawn to scale. The weights rise across the semester,
+ * which is a fact about the course a column of numbers does not show.
+ *
+ * The bar carries only the shape; every name, weight and week is in the list
+ * below it. That is also why the bar is hidden from assistive technology ---
+ * announcing it too would say everything twice.
+ */
+import { withBase } from "astro-theme-university/url";
+import { getAssessmentWeights } from "../lib/semester";
+
+const assessments = await getAssessmentWeights();
+const total = assessments.reduce((sum, assessment) => sum + assessment.weight, 0);
+---
+
+<figure class="weights">
+  <div class="weights-bar" aria-hidden="true">
+    {
+      assessments.map((assessment, index) => (
+        <span
+          class="weights-segment"
+          style={`flex-grow:${assessment.weight};--step:${index + 1}`}
+        />
+      ))
+    }
+  </div>
+
+  <ol class="weights-list">
+    {
+      assessments.map((assessment) => (
+        <li>
+          <a href={withBase(`/assessments/${assessment.id}/`)}>{assessment.title}</a>
+          <span class="weights-weight">{assessment.weight}%</span>
+          <span class="weights-week">week {assessment.week}</span>
+        </li>
+      ))
+    }
+  </ol>
+
+  <figcaption>The four pieces of work, drawn to scale. They total {total}%.</figcaption>
+</figure>
+
+<style>
+  .weights {
+    margin: var(--at-spacing-lg) 0;
+  }
+
+  .weights-bar {
+    display: flex;
+    gap: 2px;
+    overflow: hidden;
+    border-radius: var(--at-border-radius);
+  }
+
+  /* Each piece is a step heavier than the last, so each step sits a shade
+     stronger. The floor is high enough that the lightest step still reads
+     against a dark background. The list below carries the mapping; nothing
+     here depends on telling the shades apart. */
+  .weights-segment {
+    flex-basis: 0;
+    height: 1.4rem;
+    background: color-mix(in srgb, var(--at-accent) calc(55% + var(--step) * 11%), var(--at-bg));
+  }
+
+  .weights-list {
+    display: grid;
+    gap: 0.2rem 1rem;
+    margin-block: var(--at-spacing-md) 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .weights-list li {
+    display: grid;
+    grid-template-columns: 1fr max-content max-content;
+    gap: 0.75rem;
+    align-items: baseline;
+    padding-block: 0.15rem;
+    border-block-end: 1px solid var(--at-divider);
+  }
+
+  .weights-weight {
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .weights-week {
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+
+  .weights figcaption {
+    margin-block-start: 0.5rem;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-sm);
+  }
+</style>
