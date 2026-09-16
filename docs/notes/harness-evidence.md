@@ -67,3 +67,43 @@ Assert on rendered text or on the element with its attributes.
 **Promotion.** Rule, for `CLAUDE.md` if it holds up again: when checking a
 built page, match what a reader sees --- rendered text or a full element ---
 never a class name, which the stylesheet supplies for free.
+
+
+## Three visibly wrong figures, and a green `check` for all of them
+
+**What happened.** Building the semester track and the weights bar, `pnpm
+check` --- typecheck, build, axe over 38 pages, the link checker, 16 spec tests
+--- came back green on three states that were wrong the moment anyone looked:
+
+- `min-height: 1em` on the assessment badge reserved less than the line box it
+  renders in, so the four weeks carrying a badge stood taller than the other
+  eight and the track was a ragged row.
+- Folding each block's gloss into the figure let a three-line gloss push its
+  weeks below a two-line gloss's, so the twelve cells stepped down the page
+  instead of reading as one track. Fixed with `grid-template-rows: subgrid`.
+- `border-inline-start` on the break label, which is set `writing-mode:
+  vertical-rl`, drew as a stub across the top of the label rather than a line
+  down the semester --- under vertical writing the inline-start edge *is* the
+  top. Physical `border-left` was what the design meant.
+
+Then a fourth, found only by forcing `data-theme="dark"`: the lightest segment
+of the weights bar sat at `color-mix(accent 55%, bg)`, which against a near
+black background was barely a shade off it.
+
+**What it cost.** Four rounds of render-look-fix. Nothing shipped wrong,
+because each one was caught by reading the picture --- but nothing in `check`
+was ever going to catch them.
+
+**What would have caught it earlier.** Nothing in this repo yet, and it is
+worth being honest about which of these a sensor could reach. Unequal cell
+heights and a stepped track are measurable: the bounding boxes of the twelve
+week cells should share a top edge and a height, and that is a DOM assertion.
+The break rule and the dim segment are not; they need an eye. The axe pass in
+particular gives false comfort here --- it checks the contrast of *text*, and a
+block of colour carrying meaning with no text in it is invisible to it.
+
+**Promotion.** Proposed, alongside the phone-width overflow gate from the first
+entry: a layout sensor over the built home page asserting the twelve week cells
+agree on top edge and height. The rest stays a rule that is already in
+`CLAUDE.md` --- open the page and look at it --- and this entry is evidence it
+earns its place.
