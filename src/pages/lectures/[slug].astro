@@ -36,7 +36,16 @@ const context = await getWeekContext(lecture.data.week, "lectures");
     buildsOn={context.buildsOn}
     feeds={context.feeds}
   />
-  {mechanism && <p class="mechanism"><strong>Why it works:</strong> {mechanism}</p>}
+  {
+    mechanism ? (
+      <p class="mechanism">
+        <span class="mechanism-label">Why it works</span>
+        {mechanism}
+      </p>
+    ) : (
+      <p class="register-absent">No mechanism this week.</p>
+    )
+  }
   <Content />
   {
     sources.length > 0 && (
@@ -65,9 +74,31 @@ const context = await getWeekContext(lecture.data.week, "lectures");
 </ContentLayout>
 
 <style>
+  /* The course keeps two registers apart: the trick is written in corporate
+     voice, the mechanism in plain English. They live on separate pages, so the
+     only thing that can carry that rule to a reader is how they are set.
+     Plain English gets no chrome --- no box, no rule, no tint --- just room.
+     Its opposite number is `.trick` in `src/pages/sessions/[slug].astro`; if
+     you restyle one, the pair only works if the other still looks unlike it. */
   .mechanism {
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--at-accent, currentColor);
-    background: var(--at-bg-alt, transparent);
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+    font-size: 1.15rem;
+    line-height: 1.65;
+  }
+
+  .mechanism-label {
+    display: block;
+    color: var(--at-text-secondary);
+    font-size: var(--at-font-size-base);
+    font-style: italic;
+  }
+
+  /* Week 10 has no mechanism, and that absence is the week's argument, so it
+     is set as an absence rather than left as a gap the reader cannot see.
+     `spec/course.test.ts` holds it to exactly one such week. */
+  .register-absent {
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+    color: var(--at-text-secondary);
+    font-style: italic;
   }
 </style>

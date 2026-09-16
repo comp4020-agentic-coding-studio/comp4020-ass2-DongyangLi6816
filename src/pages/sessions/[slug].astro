@@ -35,7 +35,16 @@ const context = await getWeekContext(session.data.week, "sessions");
     buildsOn={context.buildsOn}
     feeds={context.feeds}
   />
-  {trick && <p class="trick"><strong>This week's trick:</strong> {trick}</p>}
+  {
+    trick ? (
+      <p class="trick">
+        <span class="trick-label">This week's trick</span>
+        {trick}
+      </p>
+    ) : (
+      <p class="register-absent">No trick this week.</p>
+    )
+  }
   <Content />
   <SpecList spec={session.data.spec}>
     Before you leave the room. Each line is something you can check yourself.
@@ -53,9 +62,37 @@ const context = await getWeekContext(session.data.week, "sessions");
 </ContentLayout>
 
 <style>
+  /* The course keeps two registers apart: the trick is written in corporate
+     voice, the mechanism in plain English. They live on separate pages, so the
+     only thing that can carry that rule to a reader is how they are set. The
+     trick is set as the office artefact it imitates --- ruled box, tinted
+     ground, filed under a label. Its opposite number is `.mechanism` in
+     `src/pages/lectures/[slug].astro`, which deliberately gets no chrome at
+     all; restyling one only works if the other still looks unlike it. */
   .trick {
-    padding: 0.75rem 1rem;
-    border-left: 4px solid var(--at-accent, currentColor);
-    background: var(--at-bg-alt, transparent);
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+    padding: var(--at-spacing-md);
+    border: 1px solid var(--at-border);
+    border-radius: var(--at-border-radius);
+    background: var(--at-bg-alt);
+  }
+
+  .trick-label {
+    display: block;
+    margin-block-end: 0.35rem;
+    color: var(--at-text-secondary);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Week 10 has no trick, and that absence is the week's argument, so it is
+     set as an absence rather than left as a gap the reader cannot see.
+     `spec/course.test.ts` holds it to exactly one such week. */
+  .register-absent {
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+    color: var(--at-text-secondary);
+    font-style: italic;
   }
 </style>

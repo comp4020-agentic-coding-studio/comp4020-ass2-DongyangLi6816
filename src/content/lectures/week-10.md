@@ -28,7 +28,7 @@ related:
   - sessions/10-the-layoff-list
 ---
 
-This lecture has no mechanism to explain, only a record to read.
+There is a record to read instead.
 
 In January 2025 Meta cut about five percent of its staff and called them low
 performers; a year later it cut a tenth of one division and, in May 2026,

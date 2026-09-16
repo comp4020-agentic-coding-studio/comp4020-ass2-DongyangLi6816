@@ -15,7 +15,7 @@ spec:
   - you have read the week-10 lecture's sources and can name one figure from 2025 or 2026
 ---
 
-This stand-up has no trick section. That is not an omission.
+That is not an omission.
 
 In 2025 and 2026 the largest technology companies cut tens of thousands of
 corporate roles. Some of those cuts were framed as performance-based, and the
