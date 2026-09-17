@@ -107,3 +107,47 @@ entry: a layout sensor over the built home page asserting the twelve week cells
 agree on top edge and height. The rest stays a rule that is already in
 `CLAUDE.md` --- open the page and look at it --- and this entry is evidence it
 earns its place.
+
+## A colon in a frontmatter line took the build down
+
+**What happened.** Adding the new `cost:` line to all twelve stand-ups in one
+scripted pass, week 9's value began "You: the person nobody can remove". YAML
+read the second colon as a nested key and `astro check` failed on
+`09-the-reorg.md:11:9` with "bad indentation of a mapping entry" before any
+page built.
+
+**What it cost.** One red run and one quoted string. Small, and caught at the
+first gate, which is the point of recording it: the sensor that caught it is
+the build, and the build only ran because `pnpm check` is the first thing done
+after a content edit.
+
+**What would have caught it earlier.** A rule. Any frontmatter value written by
+a script, or containing `: `, is double-quoted. Eleven of the twelve lines were
+fine, which is exactly how the twelfth gets through a read-over.
+
+**Promotion.** Proposed for `CLAUDE.md`, under the stack facts: quote any
+frontmatter scalar that contains a colon.
+
+## An edit script quoted a paragraph from memory and stopped halfway
+
+**What happened.** The block D script replaced text in nine files in
+sequence, each replacement guarded by an assertion that the old string occurs
+exactly once. The week 11 stand-up's old string had been typed from my own
+summary of the page, not copied from it, and did not match. The assertion
+fired, the script exited, and the six edits after it never ran, while the
+three before it had already been written.
+
+**What it cost.** One partially applied unit, a `grep` to find out which half
+had landed, and a second run of the remainder. Nothing wrong shipped, because
+the guard did its job: an unguarded `replace` would have silently changed
+nothing and reported success.
+
+**What would have caught it earlier.** The guard is the sensor and it worked;
+what failed was the input to it. The rule: an `old` string in an edit script
+is pasted from the file's current text, never reconstructed. Where several
+files are edited in one pass, check every `old` string against its file before
+writing any of them, so a mismatch stops the pass before it starts rather than
+in the middle.
+
+**Promotion.** Rule, for `CLAUDE.md` if it recurs: match strings come from the
+file, and a multi-file edit verifies all its matches before it writes one.

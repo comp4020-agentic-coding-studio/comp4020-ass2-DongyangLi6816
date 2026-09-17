@@ -7,10 +7,19 @@ marked **open** with the pick I'd make.
 ## The one idea
 
 Every trick for surviving a performance review works because the review system
-is badly designed. So the course teaches the tricks, straight-faced, and beside
-each one explains the real mechanism it exploits. By week 12 the student
-understands the system well enough to design one their week-1 self could not
-beat. You learn to game the system; then you become the system.
+is badly designed. So the course teaches the tricks, straight-faced, beside
+each one explains the real mechanism it exploits, and ends each one by naming
+who pays for it. By week 12 the student understands the system well enough to
+design one their week-1 self could not beat, and to say who pays under the
+design. You learn to game the system; then you become the system.
+
+Revised 16 September 2026 after an external review. What changed: a fourth
+per-week field, `cost`; one classic paper beside each week's case;
+calibration reframed as a flawed fix for the rater problem rather than the
+enemy; week 8 rebuilt around passive presence so it stops repeating week 5;
+peer feedback folded into week 3; week 11 corrected (the rat race has a
+model); Assessment 3 marked on the page rather than the room; Assessment 4
+given two questions no design may skip.
 
 The audience is real: final-year students about to start graduate jobs at
 companies that, in 2025 and 2026, cut staff on the basis of ratings decided in
@@ -38,11 +47,16 @@ class; "Workshops" is the safe pick.
 - **Straight-faced.** The site reads like a real corporate training course. The
   irony is left for the reader; the site never winks. (**open**: this is my
   pick over openly sarcastic. Deadpan wears better over twenty pages.)
-- **Two registers, kept apart.** Each week has a *Trick* section written in
-  corporate voice ("stakeholders", "alignment", "impact") and a *Why it works*
-  section in plain English. Jargon is allowed only in the trick. This is the
-  difference between deliberate jargon and AI slop, and it becomes a harness
-  rule.
+- **Three registers, kept apart.** Each week has a *Trick* section written in
+  corporate voice ("stakeholders", "alignment", "impact"), a *Why it works*
+  section in plain English, and a one-line *Who pays* in plain English as a
+  verdict. Jargon is allowed only in the trick. This is the difference between
+  deliberate jargon and AI slop, and it becomes a harness rule.
+- **A paper and a case, every week.** The mechanism cites the research it
+  rests on (Scullen, Kerr, Holmstrom and Milgrom, Prendergast, Bolino,
+  Harris and Schaubroeck, Heilman and Haynes, Elsbach, Landers, Colquitt);
+  the trick cites a 2025–26 case. `spec/course.test.ts` holds every lecture
+  to at least two sources.
 - **The joke is on the system, not on people.** Tricks stay within office
   politics and gaming the measure. Nothing illegal, no sabotage of a named
   colleague, no harassment. Real layoffs are cited as facts with sources and
@@ -58,11 +72,11 @@ change of footing.
 
 | Block | Weeks | What changes |
 | --- | --- | --- |
-| A. Read the system | 1–3 | You learn how the rating is actually decided |
-| B. The tricks | 4–6 | You learn to game it |
+| A. The room | 1–3 | You learn how the rating is actually decided, by whom, and why the room exists |
+| B. Inputs you control | 4–6 | You learn to shape the self-review, the traces and the credit |
 | *break* | 5–16 April | |
-| C. Harder tricks | 7–9 | The tricks get riskier and start to depend on things you don't control |
-| D. When it stops working | 10–12 | The tricks fail, and you are handed the other side of the table |
+| C. Inputs you do not | 7–9 | The packet, the presence and the reorg: tricks that depend on things you don't control |
+| D. The system fails | 10–12 | The tricks fail, then stop distinguishing anyone, and you are handed the other side of the table |
 
 ### Week by week
 
@@ -79,18 +93,21 @@ to a rubric line. *Why it works:* your manager has three minutes to argue for
 you in calibration and will use whatever you hand them. Builds on: nothing.
 This week's lecture carries the real deck.
 
-**Week 2 (1 Mar) — Goodhart's law for beginners.**
-Goodhart (1975), Campbell (1979), and Strathern's paraphrase everyone quotes:
-when a measure becomes a target it stops being a measure. Software examples:
-lines of code, closed tickets, story points. *Trick:* split one ticket into
-five. *Why it works:* the dashboard counts tickets, not work, and nobody
-reconciles the two. Builds on: 1.
+**Week 2 (1 Mar) — Rewarding A, hoping for B.**
+Kerr (1975), Goodhart (1975), Campbell (1979), Strathern's paraphrase, and
+Holmstrom and Milgrom's multitask model (1991): pay for the countable task and
+effort leaves the uncountable one. Software examples: lines of code, closed
+tickets, story points. *Trick:* split one ticket into five. *Why it works:*
+the dashboard counts tickets, not work, and nobody reconciles the two. *Who
+pays:* whoever does the work the dashboard cannot count. Builds on: 1.
 
-**Week 3 (8 Mar) — The org chart is a seating plan.**
-Who speaks for you in calibration, and who chairs it. Skip-levels remember
-names; peers don't vote. *Trick:* the skip-level coffee. *Why it works:*
-calibration is advocacy, and a name the chair recognises gets argued for
-longer. Builds on: 1.
+**Week 3 (8 Mar) — Who speaks for you.**
+Who speaks for you in calibration, who writes your peer feedback, and who
+chairs it. Prendergast (1999) on influence activities under subjective
+evaluation; Bolino et al. (2008) on ingratiation outperforming self-promotion.
+*Trick:* choose your reviewers, then have coffee with your skip-level. *Why it
+works:* calibration is advocacy, and being liked moves a rating further than
+being impressive. *Who pays:* the new hire with nobody to ask. Builds on: 1.
 
 **Week 4 (15 Mar) — The self-review as fiction.**
 The brag document (Julia Evans), Amazon's 2026 "Forte" requirement to list
@@ -99,11 +116,14 @@ parts you made up ("reduced onboarding time by 40%" for a doc you wrote once).
 *Why it works:* numbers survive the summary that reaches calibration; sentences
 don't. Builds on: 1, 2. **Assessment 1 set.**
 
-**Week 5 (22 Mar) — Visibility.**
+**Week 5 (22 Mar) — Traces.**
 Work nobody sees doesn't exist. *Trick:* post progress in the public channel,
 never in a direct message; reply-all on the good news. *Why it works:* your
-manager's memory of your quarter is built from what crossed their screen.
-Builds on: 3, 4.
+manager's memory of your quarter is built from the traces that crossed their
+screen, and a private message leaves none. Kept deliberately apart from week
+8: this is the trace work leaves; week 8 is the trace you leave when not
+working. *Who pays:* the person who fixed it in a direct message. Builds on:
+3, 4.
 
 **Week 6 (29 Mar) — Credit.**
 "We shipped" versus "I shipped". *Trick:* be the person who writes the launch
@@ -118,11 +138,15 @@ product graveyard as the case. *Trick:* rebuild something that already works,
 and launch it. *Why it works:* "impact" is measured at launch, and the cost of
 the rebuild lands in someone else's review. Builds on: 2, 6.
 
-**Week 8 (26 Apr) — Calendar theatre.**
-Looking busy as a skill. *Trick:* schedule the email for 11:03 pm; decline
-nothing; block "focus time" and post about it. *Why it works:* effort is
-unobservable, so managers use its proxies, and proxies can be manufactured.
-Builds on: 5. **Assessment 2 set.**
+**Week 8 (26 Apr) — Presence.**
+Being seen, rated separately from what you did. Elsbach, Cable and Sherman
+(2010): passive face time triggers spontaneous inferences of "dependable" and
+"committed" that the observer does not know they made. Proxies updated to
+2026: status dot, document comments, camera, attendance. *Trick:* keep the
+green dot on, and comment on every document. *Why it works:* presence is
+absorbed as a trait, not remembered as an event, and the signal costs
+nothing. *Who pays:* whoever has to be offline at five. Builds on: 5.
+**Assessment 2 set.**
 
 **Week 9 (3 May) — The reorg.**
 Every trick so far assumes a stable org chart. A reorg wipes the scoreboard:
@@ -140,15 +164,18 @@ function, cost and headcount target, with "performance" applied afterwards.
 centre cannot be gamed by anyone on it. Builds on: 1, 9. This is the one honest
 week, and the change of tone is the point.
 
-**Week 11 (17 May) — Everyone is doing it.**
+**Week 11 (17 May) — The rat race.**
 When everyone games the measure, the measure measures nothing, and the whole
-team runs faster to stay in place. Ordóñez et al.'s "Goals Gone Wild" on what
-narrow targets do to behaviour; Scullen et al. on forced-distribution gains
-fading within a few years. Taught as an argument, not a proven equilibrium (the
-research says less than the folk theory does, and the page says so).
-*Trick:* none that works; the trick is to leave before the equilibrium arrives.
-*Why it works:* it doesn't, which is the lesson. Builds on: 2, 10.
-**Assessment 3 runs in this week's workshop.**
+team runs faster to stay in place. Landers, Rebitzer and Taylor (1996) model
+the rat race and measure it in two law firms: promotion on billable hours,
+every associate bills long, hours stop distinguishing anyone, nobody can move
+first. Scullen, Bergey and Aiman-Smith (2005) on forced-distribution gains
+fading within a few years; Ordóñez et al. on what narrow targets do
+meanwhile. Earlier drafts called this folk theory; it is not, and the page no
+longer says so. *Trick:* leave before the equilibrium arrives. *Why it
+works:* the race is the equilibrium, not a failure of it. *Who pays:*
+everyone who stays. Builds on: 2, 10. **Assessment 3 runs in this week's
+workshop.**
 
 **Week 12 (24 May) — Now you're the manager.**
 Backward design applied to a review system: decide what you want to be true of
@@ -163,8 +190,8 @@ standing in it. Builds on: everything. **Assessment 4 due Friday 28 May.**
 | --- | --- | --- | --- | --- | --- |
 | 1 | The self-review | 15% | wk 4 | Fri 2 Apr (wk 6) | 1, 2, 4 |
 | 2 | Field report | 20% | wk 8 | Fri 7 May (wk 9) | 3, 5, 6, 7, 8 |
-| 3 | Calibration | 25% | wk 11 | in the wk 11 workshop (17 May) | 1, 3, 9, 10 |
-| 4 | Design an ungameable review | 40% | wk 7 | Fri 28 May (wk 12) | all |
+| 3 | Calibration | 20% | wk 11 | in the wk 11 workshop (17 May) | 1, 3, 9, 10, 11 |
+| 4 | Design an ungameable review | 45% | wk 7 | Fri 28 May (wk 12) | all |
 
 **1. The self-review (15%).** Write a self-review, in corporate register, for a
 completely ordinary quarter of work: a group project, a part-time job, a
@@ -177,21 +204,28 @@ explain the mechanism it exploits, with what would have to change about the
 system for the trick to stop working. Marked (weighted): the observation 30,
 the mechanism 40, the fix 30.
 
-**3. Calibration (25%).** In the week 11 workshop, students are grouped into
+**3. Calibration (20%).** In the week 11 workshop, students are grouped into
 "teams" of eight with a tutor as chair. Each student argues for a classmate's
 field report, not their own; the team has two "exceeds" slots and must place
-one report in "below". Marked (holistic): how well you argued for someone else,
-and whether you could explain afterwards why the outcome was what it was. This
-is the week the course's own system is turned on the students, and the policies
-page warns them from day one.
+one report in "below". The three minutes in the room are pass or fail; the
+mark is for the page written afterwards explaining the outcome in terms of the
+room. The course does not mark the three minutes because that would be the
+most rater-dependent mark in it, and week 1 says how much of a rating is the
+rater. Dropped from 25% for the same reason. This is the week the course's
+own system is turned on the students, and the policies page warns them from
+day one.
 
-**4. Design an ungameable review (40%).** Design a performance review system
+**4. Design an ungameable review (45%).** Design a performance review system
 for a team of ten engineers: what it measures, who decides, how the evidence is
 gathered. Submit it by the Monday of week 12; the rest of the class then has
-until Thursday to submit the best trick they can find against it. Marked
-(holistic): the design is judged on what it survives, and the written
-justification on whether it names the trade-offs it chose rather than claiming
-there are none.
+until Thursday to submit the best trick they can find against it. Two questions
+no design may skip, on the front page: what does calibration's job of reducing
+rater bias if the meeting is removed, and how a rated person contests a result.
+Marked (holistic): the design is judged on what it survives and on those two
+answers, and the written justification on whether it names who pays under the
+design, using the weekly cost lines, rather than claiming nobody does. Raised
+from 40% because the three new requirements make it the course's terminal
+performance in full.
 
 ## Policies page
 
@@ -282,15 +316,43 @@ Settled, with sources: the vitality curve and Microsoft's 2013 exit from it;
 Meta's 2025 rating floors and cuts; Microsoft's 2025 PIP-or-exit policy and
 rehire ban; Amazon's 2025–26 cuts and the 2026 "Forte" accomplishments
 requirement; Google's 2025 GRAD changes; Goodhart, Campbell, Strathern;
-Evans on brag documents; promotion-driven development.
+Evans on brag documents; promotion-driven development. Added in the September
+2026 revision, all peer-reviewed: rater idiosyncrasy as over half of rating
+variance (Scullen, Mount and Goff 2000); the multitask crowding-out result
+(Holmstrom and Milgrom 1991); influence activities under subjective evaluation
+(Prendergast 1999) and ingratiation outperforming self-promotion (Bolino et
+al. 2008); self-rating leniency of half a standard deviation (Harris and
+Schaubroeck 1988); credit by expectation under ambiguity (Heilman and Haynes
+2005); passive face time as spontaneous trait inference (Elsbach, Cable and
+Sherman 2010); the rat-race equilibrium (Landers, Rebitzer and Taylor 1996);
+downsizing driven by cost, not performance (Datta et al. 2010); procedural
+justice as the predictor of accepting an outcome (Colquitt 2001).
 
 Contested or thin, and the site says so where it uses them: Amazon's "unregretted
 attrition" targets (leaked, denied by Amazon, affirmed by one HR witness); the
-"everyone games it" equilibrium (folk theory with adjacent research, not a
-result); the exact way layoff lists are built (practitioner accounts, not a
-study).
+exact way layoff lists are built (practitioner accounts, not a study). The
+"everyone games it" equilibrium was listed here as folk theory in the first
+draft; the rat-race literature settles it, and it has moved up.
 
 ## Sources
+
+Research added in the September 2026 revision
+
+- Scullen, Mount and Goff, "Understanding the latent structure of job performance ratings", JAP 2000 — https://psycnet.apa.org/record/2000-16508-012
+- Speer, Tenbrink and Schwendeman, "Let's talk it out: the effects of calibration meetings on performance ratings", Human Performance 2019 — https://www.tandfonline.com/doi/abs/10.1080/08959285.2019.1609477
+- Buckingham and Goodall, "Reinventing performance management", HBR 2015 — https://hbr.org/2015/04/reinventing-performance-management
+- Kerr, "On the folly of rewarding A, while hoping for B", AMJ 1975 — https://journals.aom.org/doi/abs/10.5465/255378
+- Holmstrom and Milgrom, "Multitask principal-agent analyses", JLEO 1991 — https://academic.oup.com/jleo/article-abstract/7/special_issue/24/2194011
+- Prendergast, "The provision of incentives in firms", JEL 1999 — https://www.aeaweb.org/articles?id=10.1257/jel.37.1.7
+- Bolino, Kacmar, Turnley and Gilstrap, "A multi-level review of impression management", J. Management 2008 — https://journals.sagepub.com/doi/10.1177/0149206308324325
+- Harris and Schaubroeck, "A meta-analysis of self-supervisor, self-peer, and peer-supervisor ratings", Personnel Psychology 1988 — https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-6570.1988.tb00631.x
+- Heilman and Haynes, "No credit where credit is due", JAP 2005 — https://pubmed.ncbi.nlm.nih.gov/16162063/
+- Elsbach, Cable and Sherman, "How passive 'face time' affects perceptions of employees", Human Relations 2010 — https://journals.sagepub.com/doi/abs/10.1177/0018726709353139
+- Elsbach and Cable, "Why showing your face at work matters", MIT Sloan Management Review 2012 — https://sloanreview.mit.edu/article/why-showing-your-face-at-work-matters/
+- Landers, Rebitzer and Taylor, "Rat race redux", AER 1996 — https://ideas.repec.org/a/aea/aecrev/v86y1996i3p329-48.html
+- Scullen, Bergey and Aiman-Smith, "Forced distribution rating systems and the improvement of workforce potential", Personnel Psychology 2005 — https://onlinelibrary.wiley.com/doi/10.1111/j.1744-6570.2005.00361.x
+- Datta, Guthrie, Basuil and Pandey, "Causes and effects of employee downsizing", J. Management 2010 — https://journals.sagepub.com/doi/10.1177/0149206309346735
+- Colquitt, "On the dimensionality of organizational justice", JAP 2001 — https://doi.org/10.1037/0021-9010.86.3.386
 
 Mechanisms
 
