@@ -37,7 +37,9 @@ You write the launch email for the project you brought. Two paragraphs, sent
 to a fictional executive. Then you swap with someone and mark every place the
 email assigns credit, explicitly or by implication. You then rewrite the email
 so credit lands where the work was done, and notice how much longer and less
-convincing it gets.
+convincing it gets. Last, you say who on the real project the first version
+quietly demoted, and whether the room would have guessed that name before
+reading the email. Usually it would have.
 
 ## How you know it worked
 

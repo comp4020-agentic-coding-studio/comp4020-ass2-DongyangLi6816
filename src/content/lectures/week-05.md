@@ -1,13 +1,14 @@
 ---
-title: Visibility
+title: Traces
 description:
-  Where a manager's memory of your quarter comes from, and why a good piece of
-  work in a direct message is worth less than an ordinary one in a channel.
+  Where a manager's memory of your quarter comes from, why a good piece of
+  work in a direct message leaves no trace, and where a trace turns into
+  theatre.
 week: 5
 date: 2027-03-23
 teachers:
   - ingrid-solano
-mechanism: A manager's memory of your quarter is built from what crossed their screen, and it is that memory, not your work, that goes into the room.
+mechanism: A manager's memory of your quarter is built from the traces that crossed their screen, and a private message leaves none.
 sources:
   - title: "Julia Evans, Get your work recognized: write a brag document"
     url: https://jvns.ca/blog/brag-documents/
@@ -28,6 +29,11 @@ their peers, and the skip-level who will chair the meeting, and it reaches
 them without any of them having to do anything. The work is the same. The
 memory it leaves is not. This is not a reason to do less work. It is a reason
 to stop assuming that work done well has been seen.
+
+Keep this week apart from week 8. This week is about the trace that work
+leaves: a post, a demo, a name on an incident. Week 8 is about the trace you
+leave when you are not working at all, which is rated too, by a different
+part of the manager's mind, and which the research treats separately.
 
 ## Outline
 

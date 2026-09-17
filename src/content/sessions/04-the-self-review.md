@@ -40,6 +40,8 @@ You start a brag document: one line per thing you did, dated, kept from now
 until the end of semester. Then you take one line and write it three ways:
 honestly, with a number, and with a number you could not defend. The group
 tries to tell the second from the third. This is harder than it should be.
+Then the group ranks the three as a manager would. The honest one comes
+last every time, which is what it costs the person who submitted it.
 
 ## How you know it worked
 

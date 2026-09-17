@@ -1,8 +1,8 @@
 ---
-title: Visibility
+title: Traces
 description:
   Work nobody saw did not happen. This week you learn where your manager's
-  memory of your quarter actually comes from, and how to put things in it.
+  memory of your quarter actually comes from, and how to leave a trace in it.
 week: 5
 date: 2027-03-25
 teachers:
@@ -37,7 +37,9 @@ private one is a data point that reaches nobody who rates you.
 You write down everything you did last month that a manager could have seen.
 Then everything they could not. The second list is longer for almost
 everyone. You pick one item from it and write the public post it should have
-had: three sentences, no adjectives, one number if you have one.
+had: three sentences, no adjectives, one number if you have one. Then you
+name the person on your team who does most of their helping in direct
+messages. Everyone has one. That is who this trick is paid for by.
 
 ## How you know it worked
 
