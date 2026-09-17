@@ -18,13 +18,14 @@ marking:
 spec:
   - one trick, from one real setting, with names and identifying details removed
   - the lecture whose mechanism it exploits is cited by week
+  - the report names who pays for the trick as it stands, before the fix
   - the fix names what changes, and what that change costs whoever runs the system
 related:
   - sessions/03-the-org-chart
   - sessions/05-visibility
   - sessions/06-credit
   - sessions/07-promotion-driven-development
-  - sessions/08-calendar-theatre
+  - sessions/08-presence
   - sessions/09-the-reorg
 ---
 
@@ -37,8 +38,8 @@ Set in week 8. Due at 5 pm on Friday of week 9.
 
 The setting can be anything with a rating in it: a group project, a
 workplace, a sports team, a share house with a chore chart. You are looking
-for the skip-level coffee, the public post, the launch email, the rebuild,
-the scheduled message, or the single point of failure. Once you know the
+for the chosen reviewer, the skip-level coffee, the public post, the launch
+email, the rebuild, the green dot, or the single point of failure. Once you know the
 shapes you will see them everywhere; pick one and describe it precisely.
 
 Then the harder two parts. Name the mechanism from the lecture it exploits,

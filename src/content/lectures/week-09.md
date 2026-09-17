@@ -32,9 +32,17 @@ can reach, and reaching it means being the single point of failure for a
 system the organisation needs. It is the most effective trick in the course
 and the one with the highest cost to everyone else.
 
+It has a second cost, which the practitioner accounts leave out because they
+are written by people who survived. The person nobody can remove is the
+person nobody can promote. A promotion is a move off the system you alone
+understand, and the organisation that kept you for that reason will not fund
+the move. A bus factor of one is a survival strategy with a ceiling, and the
+ceiling is exactly where you are standing.
+
 ## Outline
 
 - what a reorg resets: manager, chair, memory, the team in your brag doc
 - the order in which a list is built, and where individuals enter it
 - dependency as the last filter, and the bus factor as a career strategy
-- the cost of that strategy to the team, and what week 12 does about it
+- the cost of that strategy to the team, and the ceiling it puts on you
+- what week 12 does about both

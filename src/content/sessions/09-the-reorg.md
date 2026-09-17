@@ -44,5 +44,6 @@ it was written for a stranger.
 ## How you know it worked
 
 You can say what a reorg does to each trick you know, and you have noticed
-that the one that survives best is the one that makes you a risk to remove.
+that the one that survives best is the one that makes you a risk to remove,
+and therefore a risk to move anywhere else.
 Assessment 2 is due on Friday.
