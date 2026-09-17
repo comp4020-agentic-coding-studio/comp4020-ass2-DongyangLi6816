@@ -1,5 +1,5 @@
 ---
-title: Goodhart's law for beginners
+title: Rewarding A, hoping for B
 description:
   Once a measure becomes a target it stops measuring anything. This week you
   find the measure your team is judged on and work out how to move it without
@@ -39,7 +39,9 @@ dashboard reflects the granularity of your execution.
 You take the measure you brought and write down, in one column, what it was
 meant to stand for, and in the next column, three ways to move it that do not
 involve doing the thing it stands for. Then the group votes on which of the
-three a manager would notice. Usually none of them.
+three a manager would notice. Usually none of them. Last, a fourth column:
+the work the measure was standing in for, which nobody counts and which gets
+done anyway, by someone. That column is who pays.
 
 ## How you know it worked
 

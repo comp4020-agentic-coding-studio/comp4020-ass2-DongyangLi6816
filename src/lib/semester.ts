@@ -19,23 +19,23 @@ export interface SemesterBlock {
 }
 
 export const semesterBlocks: SemesterBlock[] = [
-  { name: "Read the system", gloss: "how the rating is actually decided", from: 1, to: 3 },
+  { name: "The room", gloss: "how the rating is actually decided, and by whom", from: 1, to: 3 },
   {
-    name: "The tricks",
-    gloss: "the self-review, visibility, credit",
+    name: "Inputs you control",
+    gloss: "the self-review, the traces, the credit",
     from: 4,
     to: 6,
     breakAfter: true,
   },
   {
-    name: "Harder tricks",
-    gloss: "the ones that depend on things you do not control",
+    name: "Inputs you do not",
+    gloss: "the packet, the presence, the reorg",
     from: 7,
     to: 9,
   },
   {
-    name: "When it stops working",
-    gloss: "the layoff list, the equilibrium, and the design",
+    name: "The system fails",
+    gloss: "the layoff list, the rat race, and the design",
     from: 10,
     to: 12,
   },

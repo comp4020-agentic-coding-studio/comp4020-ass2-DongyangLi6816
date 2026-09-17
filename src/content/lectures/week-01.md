@@ -2,14 +2,20 @@
 title: Welcome to calibration
 description:
   What a calibration meeting is, who is in it, what the curve looks like, and
-  why the company you are about to join still runs one.
+  why a company that knows a rating is mostly the rater still runs one.
 week: 1
 date: 2027-02-23
 teachers:
   - ingrid-solano
 slides: /decks/week-01/
-mechanism: Your rating is set in a meeting you are not in, by a manager with three minutes to argue for you against a fixed distribution.
+mechanism: Over half the variance in a rating is the rater, not the rated; calibration exists to squeeze that out, and it does so by giving your manager three minutes.
 sources:
+  - title: "Scullen, Mount and Goff, Understanding the latent structure of job performance ratings (Journal of Applied Psychology, 2000)"
+    url: https://psycnet.apa.org/record/2000-16508-012
+  - title: "Speer, Tenbrink and Schwendeman, The effects of calibration meetings on performance ratings (Human Performance, 2019)"
+    url: https://www.tandfonline.com/doi/abs/10.1080/08959285.2019.1609477
+  - title: "Buckingham and Goodall, Reinventing performance management (Harvard Business Review, 2015)"
+    url: https://hbr.org/2015/04/reinventing-performance-management
   - title: Vitality curve
     url: https://en.wikipedia.org/wiki/Vitality_curve
   - title: "Eichenwald, Microsoft's lost decade (Vanity Fair, 2012)"
@@ -32,15 +38,34 @@ percent of its staff as "low performers", and in May told managers of large
 teams to rate fifteen to twenty percent of them below expectations, up from
 twelve to fifteen the year before.
 
-The curve moved out of the handbook and into the calibration meeting. Managers
-meet, usually with HR and often with a skip-level in the chair, and fit their
-proposed ratings to the distribution the company expects. You are represented
-by your manager's account of you, for about the time it takes to read this
-page.
+Here is the fact the room is built on, and the one this course keeps coming
+back to. In 2000 Scullen, Mount and Goff took two samples of more than two
+thousand managers, each rated by several bosses, peers and direct reports,
+and asked how much of a rating was the person being rated. The answer was
+less than half. Sixty-two percent of the variance in one sample and
+fifty-three in the other came from the rater: who they were, what they
+happened to value, how generous they were that year. Deloitte found the same
+thing in its own data in 2015, counted two million hours a year spent on
+reviews, and rebuilt the whole system around the finding.
+
+Calibration is the fix. If one manager's rating is mostly that manager, put
+eight managers in a room and make them argue, and the idiosyncrasies should
+cancel. The one field study of calibration meetings, in 2019, found that the
+managers who sit in them believe it works: a shared frame of reference, more
+accountability, more information per name. Nothing in this course says they
+are wrong. What the course says is what the fix costs. Eight managers, forty
+names, a fixed distribution and one afternoon means three minutes a name, and
+three minutes rewards whoever hands their manager the best three-minute case.
+Every trick in this course is a way of doing that. The room was built to
+take the rater out of the rating, and it runs on your manager's advocacy,
+which is the rater with a time limit.
+
+You are represented by your manager's account of you, for about the time it
+takes to read this page.
 
 ## Outline
 
 - the curve, from GE to Meta, and where it went when it left the handbook
-- what your manager carries into the room: memory, numbers, your self-review
-- three minutes per name, and what that does to a sentence
+- the rater is most of the rating: Scullen, Mount and Goff, and what Deloitte did about it
+- calibration as the fix, and what the fix costs: three minutes a name
 - what this course will teach you, and the one thing it will not
