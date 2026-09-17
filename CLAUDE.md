@@ -56,6 +56,14 @@ exists because a check here once passed while measuring a path nobody takes.
 - **Taste is mine.** Too fast, too thin, reads as the wrong kind of object:
   none of that is settled by a measurement. Show me the state and ask.
 
+- **Read the page before you report it.** A page is written section by
+  section, and every section introduces itself, so the finished page says
+  most things twice. Before calling a page done, read the rendered page top
+  to bottom as a student would, and delete any sentence whose information
+  already appeared above it. Write the body first and the description last,
+  from what the body does not say; a description is the lead, not a summary
+  of the paragraph under it.
+
 ## Keep an evidence file
 
 Every deliverable keeps `docs/notes/harness-evidence.md`: the failures caught
