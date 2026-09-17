@@ -1,0 +1,21 @@
+---
+import { getPublishedCollection } from "astro-course-university/content";
+import Card from "astro-theme-university/components/Card.astro";
+import CardGrid from "astro-theme-university/components/CardGrid.astro";
+
+const team = await getPublishedCollection("team");
+const visible = team.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<CardGrid columns={2}>
+  {
+    visible.map((engineer) => (
+      <Card headingLevel="h2" title={engineer.data.title} href={`/team/${engineer.id}/`}>
+        <p>
+          <small>{engineer.data.level} · {engineer.data.tenure}</small>
+        </p>
+        <p>{engineer.data.description}</p>
+      </Card>
+    ))
+  }
+</CardGrid>

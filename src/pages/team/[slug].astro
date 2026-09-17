@@ -1,0 +1,92 @@
+---
+import { render } from "astro:content";
+import { getPublishedCollection } from "astro-course-university/content";
+import RelatedContent from "astro-course-university/components/RelatedContent.astro";
+import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
+import { graphCollections, siteConfig } from "../../site-config";
+
+export async function getStaticPaths() {
+  const team = await getPublishedCollection("team");
+  return team.map((engineer) => ({ params: { slug: engineer.id }, props: { engineer } }));
+}
+
+const { engineer } = Astro.props;
+const { Content } = await render(engineer);
+const n = engineer.data.numbers;
+// The numbers as a room would read them: one figure a line, no context.
+// The context is the rest of the packet, and reading the two together is
+// the job.
+const rows: [string, string][] = [
+  ["Tickets closed", String(n.ticketsClosed)],
+  ["Pull requests merged", String(n.prsMerged)],
+  ["Incidents handled", String(n.incidentsHandled)],
+  ["Status active, hours a week", String(n.statusActiveHoursPerWeek)],
+  ["Meetings attended", `${n.meetingsAttendedPercent}%`],
+  ["Document comments", String(n.docComments)],
+  ["Posts in team channels", String(n.channelPosts)],
+  ["Direct messages sent", String(n.directMessages)],
+];
+---
+
+<ContentLayout title={engineer.data.title} description={engineer.data.description} {...siteConfig}>
+  <dl class="packet-facts">
+    <dt>Level</dt>
+    <dd>{engineer.data.level}</dd>
+    <dt>Tenure</dt>
+    <dd>{engineer.data.tenure}</dd>
+    {
+      engineer.data.owns && (
+        <>
+          <dt>Owns</dt>
+          <dd>{engineer.data.owns}</dd>
+        </>
+      )
+    }
+  </dl>
+
+  <h2>The numbers</h2>
+  <p>One quarter, from the dashboards, as they reach the room.</p>
+  <div class="table-scroll">
+    <table class="numbers">
+      <tbody>
+        {
+          rows.map(([label, value]) => (
+            <tr>
+              <th scope="row">{label}</th>
+              <td>{value}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
+  <Content />
+  <RelatedContent entry={engineer} collections={graphCollections} />
+</ContentLayout>
+
+<style>
+  .packet-facts {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.25rem var(--at-spacing-md);
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+  }
+
+  .packet-facts dt {
+    color: var(--at-text-secondary);
+  }
+
+  .packet-facts dd {
+    margin: 0;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+  }
+
+  .numbers td {
+    font-family: var(--at-font-mono);
+    text-align: end;
+  }
+</style>
