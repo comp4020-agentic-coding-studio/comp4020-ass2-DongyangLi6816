@@ -55,7 +55,6 @@ exists because a check here once passed while measuring a path nobody takes.
   have come out wrong is not evidence.
 - **Taste is mine.** Too fast, too thin, reads as the wrong kind of object:
   none of that is settled by a measurement. Show me the state and ask.
-
 - **Read the page before you report it.** A page is written section by
   section, and every section introduces itself, so the finished page says
   most things twice. Before calling a page done, read the rendered page top
