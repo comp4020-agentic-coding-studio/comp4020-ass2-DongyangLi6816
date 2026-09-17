@@ -1,7 +1,7 @@
 ---
 title: Aisha Rahman
 description: >-
-  Senior engineer, two and a half years. Led Deploy Platform v2, the biggest launch on the team this quarter. Someone else did the migration.
+  Led Deploy Platform v2, the biggest launch on the team this quarter. Someone else did the migration.
 level: Senior Engineer
 tenure: 2.5 years
 owns: Deploy Platform v2

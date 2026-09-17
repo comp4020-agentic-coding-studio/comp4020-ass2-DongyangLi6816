@@ -1,7 +1,7 @@
 ---
 title: Ravi Menon
 description: >-
-  Engineer, two years. Posts his progress in the team channel every day. Delivered the export feature.
+  Posts his progress in the team channel every day. Delivered the export feature.
 level: Engineer II
 tenure: 2 years
 numbers:

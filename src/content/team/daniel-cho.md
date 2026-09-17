@@ -1,7 +1,7 @@
 ---
 title: Daniel Cho
 description: >-
-  Senior engineer, six years. The only person who understands billing reconciliation. Documentation has been in progress since 2025.
+  The only person who understands billing reconciliation. Documentation has been in progress since 2025.
 level: Senior Engineer
 tenure: 6 years
 owns: Billing reconciliation

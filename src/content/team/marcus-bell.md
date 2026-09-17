@@ -1,7 +1,7 @@
 ---
 title: Marcus Bell
 description: >-
-  Senior engineer, four years. Online sixty hours a week, in every meeting, a comment on every document. Projects unclear.
+  Online sixty hours a week, in every meeting, a comment on every document. Projects unclear.
 level: Senior Engineer
 tenure: 4 years
 numbers:

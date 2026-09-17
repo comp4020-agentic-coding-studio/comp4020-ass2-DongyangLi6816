@@ -1,7 +1,7 @@
 ---
 title: Hannah Byrne
 description: >-
-  Senior engineer, five years. Rewrote the ledger with Tom and handled three incidents. Offline at four, and on Tuesdays.
+  Rewrote the ledger with Tom and handled three incidents. Offline at four, and on Tuesdays.
 level: Senior Engineer
 tenure: 5 years
 numbers:

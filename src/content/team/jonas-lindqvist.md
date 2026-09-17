@@ -1,7 +1,7 @@
 ---
 title: Jonas Lindqvist
 description: >-
-  Engineer, four months. Shipped the webhook retry feature in his first quarter. Had nobody to nominate.
+  Shipped the webhook retry feature in his first quarter. Had nobody to nominate.
 level: Engineer I
 tenure: 4 months
 numbers:

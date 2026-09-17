@@ -1,7 +1,7 @@
 ---
 title: Grace Adeyemi
 description: >-
-  Senior engineer, five years. Reviews more code than anyone on the team. Her self-review tags every number.
+  Reviews more code than anyone on the team. Her self-review tags every number.
 level: Senior Engineer
 tenure: 5 years
 numbers:

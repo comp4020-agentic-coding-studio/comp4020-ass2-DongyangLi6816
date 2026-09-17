@@ -1,7 +1,7 @@
 ---
 title: Kenji Watanabe
 description: >-
-  Engineer, three years. Migrated nineteen services to a platform he did not design and handled the incidents it caused.
+  Migrated nineteen services to a platform he did not design and handled the incidents it caused.
 level: Engineer II
 tenure: 3 years
 numbers:

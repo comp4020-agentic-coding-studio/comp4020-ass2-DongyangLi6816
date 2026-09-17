@@ -1,7 +1,7 @@
 ---
 title: Sofia Marchetti
 description: >-
-  Engineer, two years. Delivered the reporting module. Has coffee with the director once a month.
+  Delivered the reporting module. Has coffee with the director once a month.
 level: Engineer II
 tenure: 2 years
 numbers:

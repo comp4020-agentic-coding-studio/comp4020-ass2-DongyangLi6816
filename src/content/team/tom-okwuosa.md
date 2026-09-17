@@ -1,7 +1,7 @@
 ---
 title: Tom Okwuosa
 description: >-
-  Engineer, two years. Was on the call for all three incidents this quarter. His self-review is three sentences long.
+  Was on the call for all three incidents this quarter. His self-review is three sentences long.
 level: Engineer II
 tenure: 2 years
 numbers:

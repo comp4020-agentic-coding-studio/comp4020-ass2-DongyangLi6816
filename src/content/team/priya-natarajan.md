@@ -1,7 +1,7 @@
 ---
 title: Priya Natarajan
 description: >-
-  Senior engineer, three years. Launched the onboarding portal this quarter, and her packet says by how much it helped.
+  Launched the onboarding portal this quarter, and her packet says by how much it helped.
 level: Senior Engineer
 tenure: 3 years
 numbers:

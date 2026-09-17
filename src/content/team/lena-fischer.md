@@ -1,7 +1,7 @@
 ---
 title: Lena Fischer
 description: >-
-  Engineer, eighteen months. Closed more tickets than anyone on the team, by a distance. Top of every dashboard.
+  Closed more tickets than anyone on the team, by a distance. Top of every dashboard.
 level: Engineer II
 tenure: 18 months
 numbers:
