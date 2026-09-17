@@ -8,6 +8,7 @@ date: 2027-02-25
 teachers:
   - wen-okafor
 trick: Know the rubric better than your manager does.
+cost: The name read out last, because the room ran long.
 buildsOn: []
 spec:
   - you can name the three things your manager takes into a calibration meeting

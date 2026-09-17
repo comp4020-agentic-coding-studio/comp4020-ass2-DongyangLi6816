@@ -74,12 +74,14 @@ const context = await getWeekContext(lecture.data.week, "lectures");
 </ContentLayout>
 
 <style>
-  /* The course keeps two registers apart: the trick is written in corporate
-     voice, the mechanism in plain English. They live on separate pages, so the
+  /* The course keeps three registers apart: the trick is written in
+     corporate voice, the mechanism in plain English, and the cost line (on
+     the stand-up page) names who pays. They live on separate pages, so the
      only thing that can carry that rule to a reader is how they are set.
      Plain English gets no chrome --- no box, no rule, no tint --- just room.
-     Its opposite number is `.trick` in `src/pages/sessions/[slug].astro`; if
-     you restyle one, the pair only works if the other still looks unlike it. */
+     Its opposite numbers are `.trick` and `.cost` in
+     `src/pages/sessions/[slug].astro`; if you restyle one, the set only
+     works if the others still look unlike it. */
   .mechanism {
     margin-block: var(--at-spacing-md) var(--at-spacing-lg);
     font-size: 1.15rem;

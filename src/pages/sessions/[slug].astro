@@ -18,8 +18,9 @@ export async function getStaticPaths() {
 
 const { session } = Astro.props;
 const { Content } = await render(session);
-// `trick` is a course-specific key the schema passes through untyped.
+// `trick` and `cost` are course-specific keys the schema passes through untyped.
 const trick = typeof session.data.trick === "string" ? session.data.trick : undefined;
+const cost = typeof session.data.cost === "string" ? session.data.cost : undefined;
 const context = await getWeekContext(session.data.week, "sessions");
 ---
 
@@ -45,6 +46,16 @@ const context = await getWeekContext(session.data.week, "sessions");
       <p class="register-absent">No trick this week.</p>
     )
   }
+  {
+    cost ? (
+      <p class="cost">
+        <span class="cost-label">Who pays</span>
+        {cost}
+      </p>
+    ) : (
+      <p class="register-absent">No cost named this week.</p>
+    )
+  }
   <Content />
   <SpecList spec={session.data.spec}>
     Before you leave the room. Each line is something you can check yourself.
@@ -62,13 +73,15 @@ const context = await getWeekContext(session.data.week, "sessions");
 </ContentLayout>
 
 <style>
-  /* The course keeps two registers apart: the trick is written in corporate
-     voice, the mechanism in plain English. They live on separate pages, so the
-     only thing that can carry that rule to a reader is how they are set. The
-     trick is set as the office artefact it imitates --- ruled box, tinted
-     ground, filed under a label. Its opposite number is `.mechanism` in
-     `src/pages/lectures/[slug].astro`, which deliberately gets no chrome at
-     all; restyling one only works if the other still looks unlike it. */
+  /* The course keeps three registers apart: the trick is written in corporate
+     voice, the mechanism in plain English, and the cost line names who pays
+     for the trick, in plain English too but as a verdict, not an explanation.
+     The trick and the cost share this page, so how they are set is the only
+     thing that carries the rule to a reader. The trick is set as the office
+     artefact it imitates --- ruled box, tinted ground, filed under a label.
+     Its opposite number is `.mechanism` in `src/pages/lectures/[slug].astro`,
+     which deliberately gets no chrome at all; restyling one only works if the
+     other still looks unlike it. */
   .trick {
     margin-block: var(--at-spacing-md) var(--at-spacing-lg);
     padding: var(--at-spacing-md);
@@ -87,9 +100,28 @@ const context = await getWeekContext(session.data.week, "sessions");
     text-transform: uppercase;
   }
 
+  /* The cost is neither a box nor an explanation: one rule down the side,
+     secondary ink, the label on its own line. It sits under the trick and
+     must not read as part of it, so it shares nothing with `.trick` but the
+     vertical rhythm. */
+  .cost {
+    margin-block: 0 var(--at-spacing-lg);
+    padding-inline-start: var(--at-spacing-md);
+    border-inline-start: 2px solid var(--at-border);
+    color: var(--at-text-secondary);
+  }
+
+  .cost-label {
+    display: block;
+    margin-block-end: 0.15rem;
+    font-size: var(--at-font-size-sm);
+    font-style: italic;
+  }
+
   /* Week 10 has no trick, and that absence is the week's argument, so it is
      set as an absence rather than left as a gap the reader cannot see.
-     `spec/course.test.ts` holds it to exactly one such week. */
+     `spec/course.test.ts` holds it to exactly one such week. Every week names
+     a cost, so the cost's absence marker is a fallback, not a design. */
   .register-absent {
     margin-block: var(--at-spacing-md) var(--at-spacing-lg);
     color: var(--at-text-secondary);

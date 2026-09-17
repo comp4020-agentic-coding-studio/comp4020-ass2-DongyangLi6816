@@ -9,6 +9,7 @@ date: 2027-05-27
 teachers:
   - wen-okafor
 trick: There isn't one. You write the rubric now.
+cost: Whichever side of your trade-off you chose to let pay.
 buildsOn: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 spec:
   - your review design for Assessment 4 was submitted on Monday

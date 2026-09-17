@@ -9,6 +9,7 @@ date: 2027-04-01
 teachers:
   - wen-okafor
 trick: Be the person who writes the launch email.
+cost: Whoever the reader already expected to be the supporting act.
 buildsOn: [5]
 spec:
   - you have written a launch announcement for a project you were a minor part of

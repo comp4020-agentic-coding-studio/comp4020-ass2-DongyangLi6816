@@ -8,6 +8,7 @@ date: 2027-04-29
 teachers:
   - wen-okafor
 trick: Schedule the email for 11:03 pm.
+cost: Whoever has to be offline at five.
 buildsOn: [5]
 spec:
   - you have listed five things a manager could observe that stand in for effort

@@ -8,6 +8,7 @@ date: 2027-04-22
 teachers:
   - wen-okafor
 trick: Rebuild something that already works, and launch it.
+cost: The users who migrate and the engineer who inherits the old system.
 buildsOn: [2, 6]
 spec:
   - you have identified one system in your own life that works and nobody is credited for

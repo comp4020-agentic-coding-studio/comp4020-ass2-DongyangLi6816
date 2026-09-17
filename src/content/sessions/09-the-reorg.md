@@ -9,6 +9,7 @@ date: 2027-05-06
 teachers:
   - wen-okafor
 trick: Become the only person who understands the system you built.
+cost: "You: the person nobody can remove is the person nobody can promote."
 buildsOn: [3, 7]
 spec:
   - you have redrawn your week-3 org chart after a reorg you invented

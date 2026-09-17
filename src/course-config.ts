@@ -51,6 +51,6 @@ export const courseMeta = slopCourseMetaSchema.parse({
   description:
     "A semester on how tech companies rate, rank and cut their staff, taught " +
     "as the survival guide nobody gives graduates. Learn the tricks, learn why " +
-    "they work, then design a review that can't be gamed.",
+    "they work and who pays for them, then design a review that can't be gamed.",
   tags: ["office politics", "performance reviews", "careers"],
 }) satisfies CourseMetaInput;

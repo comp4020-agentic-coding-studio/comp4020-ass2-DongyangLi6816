@@ -8,6 +8,7 @@ date: 2027-03-18
 teachers:
   - wen-okafor
 trick: Quantify everything, including the parts you made up.
+cost: The person who submitted the honest version.
 buildsOn: [1, 2]
 spec:
   - you have a running list of what you did this semester, with a date on each line

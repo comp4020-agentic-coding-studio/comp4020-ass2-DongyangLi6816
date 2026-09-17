@@ -9,6 +9,7 @@ date: 2027-05-20
 teachers:
   - wen-okafor
 trick: Leave before the equilibrium arrives.
+cost: Everyone who stays.
 buildsOn: [2, 10]
 spec:
   - you have argued for a classmate's field report in a calibration with two "exceeds" slots

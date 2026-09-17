@@ -9,6 +9,7 @@ date: 2027-03-04
 teachers:
   - wen-okafor
 trick: Split one ticket into five.
+cost: Whoever does the work the dashboard cannot count.
 buildsOn: [1]
 spec:
   - you can state Goodhart's law and say who actually wrote the popular version

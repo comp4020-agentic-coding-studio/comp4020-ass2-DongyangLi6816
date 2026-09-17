@@ -8,6 +8,7 @@ date: 2027-03-25
 teachers:
   - wen-okafor
 trick: Post progress in the public channel, never in a direct message.
+cost: The person who fixed it in a direct message.
 buildsOn: [3, 4]
 spec:
   - you have listed everything a manager could have seen you do in the last month

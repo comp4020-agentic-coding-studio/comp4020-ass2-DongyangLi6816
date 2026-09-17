@@ -2,11 +2,12 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
-// What this course promises that the build cannot check: two registers a
-// week (a trick and the mechanism it exploits), an order to the weeks, weeks
-// that do not repeat, assessment that draws on the weeks it follows, a source
-// behind every trick, and prose that reads like a person wrote it. Each test
-// is a decision about what a good course is, made checkable.
+// What this course promises that the build cannot check: three registers a
+// week (a trick, the mechanism it exploits, and who pays for it), an order to
+// the weeks, weeks that do not repeat, assessment that draws on the weeks it
+// follows, a paper and a case behind every trick, and prose that reads like a
+// person wrote it. Each test is a decision about what a good course is, made
+// checkable.
 
 interface ApiNode {
   id: string;
@@ -50,6 +51,17 @@ describe("two registers a week", () => {
         expect(typeof trick, `week ${week} has no trick`).toBe("string");
         expect(typeof mechanism, `week ${week} has no mechanism`).toBe("string");
       }
+    }
+  });
+
+  // Every trick has a cost and somebody pays it. The honest week has no
+  // trick, but the layoff list still costs someone, so the cost is named
+  // there too: the line is the one register no week is excused from.
+  it("names who pays in every stand-up, the honest week included", () => {
+    for (let week = 1; week <= 12; week++) {
+      const cost = byWeek(sessions, week)?.meta?.cost;
+      expect(typeof cost, `week ${week} does not say who pays`).toBe("string");
+      expect((cost as string).trim().length, `week ${week} names nobody`).toBeGreaterThan(0);
     }
   });
 });
@@ -157,11 +169,13 @@ describe("assessment draws on the weeks", () => {
 });
 
 describe("every trick is real", () => {
-  it("has every lecture cite at least one source with a title and a URL", () => {
+  // A paper for the mechanism and a case for the trick: two sources is the
+  // floor, because a week with one has either no theory or no evidence.
+  it("has every lecture cite at least two sources with a title and a URL", () => {
     for (const lecture of lectures) {
       const sources = lecture.meta?.sources;
       expect(Array.isArray(sources), `${lecture.id} has no sources list`).toBe(true);
-      expect((sources as unknown[]).length, `${lecture.id} cites nothing`).toBeGreaterThan(0);
+      expect((sources as unknown[]).length, `${lecture.id} cites fewer than two sources`).toBeGreaterThanOrEqual(2);
       for (const source of sources as { title?: unknown; url?: unknown }[]) {
         expect(typeof source.title, `${lecture.id} has a source with no title`).toBe("string");
         expect(String(source.url), `${lecture.id} has a source without an http URL`).toMatch(/^https?:\/\//);

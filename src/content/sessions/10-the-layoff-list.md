@@ -8,6 +8,7 @@ week: 10
 date: 2027-05-13
 teachers:
   - wen-okafor
+cost: The best-rated person on the team, when the team is the line item.
 buildsOn: [1, 9]
 spec:
   - you can describe how a layoff list is built, in the order the decisions are made

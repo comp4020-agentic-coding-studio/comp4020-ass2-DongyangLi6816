@@ -8,6 +8,7 @@ date: 2027-03-11
 teachers:
   - wen-okafor
 trick: The skip-level coffee.
+cost: The new hire with nobody to ask.
 buildsOn: [1]
 spec:
   - you have drawn who would be in the calibration room for a real team you know
