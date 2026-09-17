@@ -1,8 +1,9 @@
 ---
 /**
- * The four assessments drawn to scale. The weights never fall across the
- * semester and the last is nearly half, which is a fact about the course a
- * column of numbers does not show.
+ * The five assessments drawn to scale, in the order a student meets them:
+ * the weekly attendance strip first, then the written pieces, then the
+ * design at two fifths of the course. That shape is a fact about the course
+ * a column of numbers does not show.
  *
  * The bar carries only the shape; every name, weight and week is in the list
  * below it. That is also why the bar is hidden from assistive technology ---
@@ -39,7 +40,7 @@ const total = assessments.reduce((sum, assessment) => sum + assessment.weight, 0
     }
   </ol>
 
-  <figcaption>The four pieces of work, drawn to scale. They total {total}%.</figcaption>
+  <figcaption>The five pieces of work, drawn to scale. They total {total}%.</figcaption>
 </figure>
 
 <style>

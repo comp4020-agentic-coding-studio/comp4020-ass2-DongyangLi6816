@@ -5,7 +5,10 @@ import CardGrid from "astro-theme-university/components/CardGrid.astro";
 import { formatCourseDate } from "../lib/dates";
 
 const assessments = await getPublishedCollection("assessments");
-const visible = assessments.sort((a, b) => a.data.week - b.data.week);
+// The weekly piece starts in week 1, so it lists first.
+const startWeek = (entry: (typeof assessments)[number]): number =>
+  entry.data.cadence === "weekly" ? 0 : entry.data.week;
+const visible = assessments.sort((a, b) => startWeek(a) - startWeek(b));
 ---
 
 <CardGrid columns={2}>
@@ -16,7 +19,10 @@ const visible = assessments.sort((a, b) => a.data.week - b.data.week);
         {assessment.data.weight != null && (
           <p>
             <small>
-              Due {formatCourseDate(assessment.data.due)} · Weight: {assessment.data.weight}%{assessment.data.draft && " · Draft"}
+              {assessment.data.cadence === "weekly"
+                ? "Marked at every stand-up"
+                : `Due ${formatCourseDate(assessment.data.due)}`}{" "}
+              · Weight: {assessment.data.weight}%{assessment.data.draft && " · Draft"}
             </small>
           </p>
         )}

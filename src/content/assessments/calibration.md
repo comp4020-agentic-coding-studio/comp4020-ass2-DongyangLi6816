@@ -5,7 +5,7 @@ description:
   calibration meeting with two "exceeds" slots and one "below" to fill.
 week: 11
 due: 2027-05-20T14:00:00+10:00
-weight: 20
+weight: 15
 marking:
   mode: holistic
   description:

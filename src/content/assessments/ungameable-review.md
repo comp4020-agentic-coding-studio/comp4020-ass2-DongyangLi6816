@@ -6,7 +6,7 @@ description:
   what it does about the rater, and whether you named who pays.
 week: 12
 due: 2027-05-28T17:00:00+10:00
-weight: 45
+weight: 40
 marking:
   mode: holistic
   description:

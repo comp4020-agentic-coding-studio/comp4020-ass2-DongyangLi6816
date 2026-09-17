@@ -45,6 +45,8 @@ export interface SemesterDue {
   title: string;
   id: string;
   weight: number;
+  /** Marked at every stand-up rather than falling due once. */
+  weekly?: boolean;
 }
 
 export interface SemesterWeek {
@@ -62,16 +64,22 @@ export interface SemesterBlockWeeks extends SemesterBlock {
   weeks: SemesterWeek[];
 }
 
-/** Every assessment, heaviest last, in the order they fall due. */
+/**
+ * Every assessment in the order a student meets it: the weekly piece first,
+ * because it starts in week 1, then the rest in the order they fall due.
+ */
 export async function getAssessmentWeights(): Promise<(SemesterDue & { week: number })[]> {
   const assessments = await getPublishedCollection("assessments");
+  const startWeek = (entry: (typeof assessments)[number]): number =>
+    entry.data.cadence === "weekly" ? 0 : entry.data.week;
   return assessments
-    .sort((a, b) => a.data.week - b.data.week)
+    .sort((a, b) => startWeek(a) - startWeek(b))
     .map((assessment) => ({
       title: assessment.data.title,
       id: assessment.id,
       weight: assessment.data.weight,
       week: assessment.data.week,
+      weekly: assessment.data.cadence === "weekly",
     }));
 }
 
@@ -81,6 +89,8 @@ export async function getSemester(): Promise<SemesterBlockWeeks[]> {
   const sessions = await getPublishedCollection("sessions");
   const dueByWeek = new Map<number, SemesterDue[]>();
   for (const assessment of await getAssessmentWeights()) {
+    // A weekly piece falls due nowhere in particular, so it gets no badge.
+    if (assessment.weekly) continue;
     const { week, ...rest } = assessment;
     dueByWeek.set(week, [...(dueByWeek.get(week) ?? []), rest]);
   }

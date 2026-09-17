@@ -45,7 +45,9 @@ which of the five you have caught yourself using to judge someone else, and
 you name one person on a real team you have been on who could not have
 produced it, because of a school run, a carer, a time zone or a body. They
 did the work and not the presence. That is who this week's trick is paid
-for by.
+for by. Last, the tutor points at the attendance sheet, which is a presence
+proxy this course chose on purpose, and asks you to say what it costs and
+whom.
 
 ## How you know it worked
 

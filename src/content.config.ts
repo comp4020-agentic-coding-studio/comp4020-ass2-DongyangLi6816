@@ -51,6 +51,9 @@ export const collections = {
         due: z.coerce.date(),
         weight: z.coerce.number().positive().max(100),
         marking: z.discriminatedUnion("mode", [weightedMarking, holisticMarking]).optional(),
+        // A weekly piece is marked at every stand-up and has no single due
+        // date; `week` and `due` then name the last stand-up it is marked at.
+        cadence: z.enum(["weekly"]).optional(),
       })
       .loose(),
   }),

@@ -35,7 +35,19 @@ const { Content } = await render(assessment);
       </Callout>
     )
   }
-  <p><strong>Due:</strong> {formatCourseDate(assessment.data.due)} · <strong>Weight:</strong> {assessment.data.weight}%</p>
+  {
+    assessment.data.cadence === "weekly" ? (
+      <p>
+        <strong>Marked:</strong> at every stand-up, weeks 1 to 12 · <strong>Weight:</strong>{" "}
+        {assessment.data.weight}%
+      </p>
+    ) : (
+      <p>
+        <strong>Due:</strong> {formatCourseDate(assessment.data.due)} · <strong>Weight:</strong>{" "}
+        {assessment.data.weight}%
+      </p>
+    )
+  }
   <Content />
   <SpecList spec={assessment.data.spec}>
     The brief poses the problem and leaves room for a response. The spec is the
