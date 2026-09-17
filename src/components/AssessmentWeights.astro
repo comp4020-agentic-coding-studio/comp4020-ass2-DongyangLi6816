@@ -34,7 +34,7 @@ const total = assessments.reduce((sum, assessment) => sum + assessment.weight, 0
         <li>
           <a href={withBase(`/assessments/${assessment.id}/`)}>{assessment.title}</a>
           <span class="weights-weight">{assessment.weight}%</span>
-          <span class="weights-week">week {assessment.week}</span>
+          <span class="weights-week">{assessment.weekly ? "every week" : `week ${assessment.week}`}</span>
         </li>
       ))
     }
