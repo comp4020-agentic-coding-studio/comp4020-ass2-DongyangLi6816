@@ -64,9 +64,8 @@ related:
   - team/hannah-byrne
 ---
 
-Set in the week 7 stand-up, so that you have every trick before you design
-against them. Two parts, two deadlines, and a week in between where the class
-attacks it.
+Two parts, two deadlines, and a week in between where your group attacks
+it.
 
 ## The brief
 
@@ -153,11 +152,11 @@ with these sections.
 
 ## What you submit
 
-Two PDFs in the Assessment 4 thread: `SLOP3385-<uid>-design.pdf` (two
-pages) by 9 am Monday 24 May, and `SLOP3385-<uid>-justification.pdf` (up
-to 1,000 words) by 5 pm Friday 28 May. The policies page says what counts
-as submitted and how to get an extension; note that an extension on the
-Monday deadline moves you out of the attack week, so ask early.
+Two PDFs in the Assessment 4 thread: `SLOP3385-<uid>-design.pdf`, two
+pages, and `SLOP3385-<uid>-justification.pdf`, up to 1,000 words, at the
+times in the timeline. The policies page says what counts as submitted and
+how to get an extension; an extension on the Monday deadline moves you out
+of the attack week, so ask early.
 
 ## Marker's checklist
 

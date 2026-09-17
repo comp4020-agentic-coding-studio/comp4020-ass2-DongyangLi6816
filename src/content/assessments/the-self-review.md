@@ -1,8 +1,8 @@
 ---
 title: The self-review
-description:
-  Write a self-review, in corporate register, for a completely ordinary
-  quarter of work. Then write the honest version on the next page.
+description: >-
+  Two pages about the same ordinary quarter: the self-review a manager
+  could carry into calibration, and the honest version.
 week: 6
 due: 2027-04-02T17:00:00+11:00
 weight: 15
@@ -43,8 +43,8 @@ related:
   - sessions/06-credit
 ---
 
-Set in the week 4 stand-up, Thursday 18 March. Due at 5 pm on Friday 2
-April, the last day of week 6 and the last day before the break.
+Set in the week 4 stand-up, Thursday 18 March. Due on the last day before
+the break.
 
 ## The brief
 
@@ -80,10 +80,9 @@ still tagged. It will be shorter than page one. The marker reads the gap.
 
 ## What you submit
 
-One PDF of exactly two pages, named `SLOP3385-<uid>-self-review.pdf`, posted
-to the Assessment 1 thread of the course forum by the due time. Work not in
-the forum by then does not exist; see the policies page for what counts as
-submitted and how to get an extension. Draft it however you like, with
+One PDF of exactly two pages, named `SLOP3385-<uid>-self-review.pdf`, in the
+Assessment 1 thread of the course forum. The policies page says what counts
+as submitted and how to get an extension. Draft it however you like, with
 whatever you like. The mark is for what the two pages say about the same
 quarter.
 

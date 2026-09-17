@@ -1,9 +1,9 @@
 ---
 title: Traces
-description:
-  Where a manager's memory of your quarter comes from, why a good piece of
-  work in a direct message leaves no trace, and where a trace turns into
-  theatre.
+description: >-
+  Memory, numbers, self-review, and why memory wins. What a manager of ten
+  can hold from a quarter, direct message against channel, and the line where
+  a trace becomes theatre.
 week: 5
 date: 2027-03-23
 teachers:

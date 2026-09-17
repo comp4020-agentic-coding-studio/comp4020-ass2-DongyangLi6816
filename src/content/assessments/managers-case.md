@@ -1,9 +1,8 @@
 ---
 title: The manager's case
-description:
-  You are the new manager. Here is one engineer's packet for the quarter.
-  Write the two minutes you would argue for them in the room, then write
-  down everything in the packet you do not believe.
+description: >-
+  One engineer's packet, drawn by lottery in week 8: the case you would
+  argue for them in the room, and what in the packet you do not believe.
 week: 9
 due: 2027-05-07T17:00:00+10:00
 weight: 20
@@ -61,10 +60,6 @@ related:
   - team/hannah-byrne
 ---
 
-Set in the week 8 stand-up, Thursday 29 April, when the groups are drawn
-and each of you leaves with a packet. Due at 5 pm on Friday 7 May, the end
-of week 9.
-
 ## The brief
 
 > You are the manager. Here is the packet. Write the two minutes. Then
@@ -72,15 +67,13 @@ of week 9.
 
 The old manager moved teams in the April reorg. You have inherited one of
 the twelve engineers on [the team page](/team/), and in week 11 you will sit
-in a calibration meeting and argue for them. All you have is their packet:
-the self-review, two peer paragraphs, three notes the old manager left, the
-numbers, the announcement if there was one, and where they sit. You have
-never met them. This is normal; week 9 told you why.
+in a calibration meeting and argue for them. You have never met them. This
+is normal; week 9 told you why.
 
 ## The packet
 
-Every packet on the team page has the same six parts. Read them in this
-order the first time: the numbers, then the announcement, then the peers,
+Six parts, the same for every engineer. Read them in this order the first
+time: the numbers, then the announcement, then the peers,
 then the manager's notes, and the self-review last. Then read the
 self-review again with the rest in mind. Most packets have something in
 them that this course has a week for. Some have a person in them the
@@ -126,9 +119,9 @@ their head; the course wants the second one on paper.
 
 ## What you submit
 
-One PDF of two pages, named `SLOP3385-<uid>-case.pdf`, posted to the
-Assessment 2 thread of the course forum by the due time. The policies page
-says what counts as submitted and how to get an extension.
+One PDF of two pages, named `SLOP3385-<uid>-case.pdf`, in the Assessment
+2 thread of the course forum. The policies page says what counts as
+submitted and how to get an extension.
 
 ## Marker's checklist
 

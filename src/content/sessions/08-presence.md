@@ -18,8 +18,7 @@ spec:
   - you have named one person on a real team who could not have produced the signal
 ---
 
-Week 5 was about work being seen. This week is about being seen, full stop,
-which is rated separately and is much cheaper to produce.
+Week 5 was about work being seen. This week is about being seen, full stop.
 
 ## Bring
 

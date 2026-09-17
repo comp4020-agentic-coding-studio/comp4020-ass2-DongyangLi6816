@@ -175,3 +175,25 @@ when a picture is a fragment.
 
 **Promotion.** Rule, for `CLAUDE.md` if it recurs: a screenshot verifies only
 what is inside it, and the capture must say what it left out.
+
+## The colon took the build down a second time
+
+**What happened.** Rewriting eleven `description:` fields in one scripted
+pass to stop them restating the page, three of the new sentences contained
+a colon followed by a space. The helper wrote plain multi-line scalars, so
+YAML read the colon as a nested key and `astro check` failed on the first
+file it reached.
+
+**What it cost.** One red run, the same as the first time, plus the
+realisation that the first entry's rule had been written down and not
+followed, because a rule in an evidence file is not a rule anywhere the work
+happens.
+
+**What would have caught it earlier.** The helper that writes frontmatter
+now emits folded scalars (`>-`) for every description it touches, so the
+rule lives in the tool rather than in a note. That is the sensor form of
+the rule the first entry proposed.
+
+**Promotion.** This lesson has now recurred, which is the bar the harness
+sets. Proposed for `CLAUDE.md`, stack facts: a frontmatter scalar that
+contains `: ` is written as a folded block or a quoted string, never plain.

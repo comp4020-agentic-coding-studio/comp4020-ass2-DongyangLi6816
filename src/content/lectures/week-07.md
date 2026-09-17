@@ -1,8 +1,9 @@
 ---
 title: Promotion-driven development
-description:
-  Why launches are rewarded and maintenance is not, and how that one incentive
-  explains most of what large software companies build and abandon.
+description: >-
+  Promotion packets, Google's product graveyard, the multitask model with a
+  launch in it, and how to tell a rebuild the users needed from one the packet
+  needed.
 week: 7
 date: 2027-04-20
 teachers:

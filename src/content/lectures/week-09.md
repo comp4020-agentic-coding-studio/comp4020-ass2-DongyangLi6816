@@ -1,8 +1,8 @@
 ---
 title: The reorg
-description:
-  What a restructure does to every relationship a rating depended on, and why
-  the people it keeps are the ones whose removal breaks something.
+description: >-
+  What a restructure resets, the order a list is built in, dependency as the
+  last filter, and the ceiling that strategy puts on the person using it.
 week: 9
 date: 2027-05-04
 teachers:

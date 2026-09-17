@@ -1,9 +1,8 @@
 ---
 title: Calibration
-description:
-  Your group meets with the packets from Assessment 2 and fits them to the
-  curve. You argue your case for two minutes. Then you explain, on one page,
-  why the room came out the way it did.
+description: >-
+  Your group's calibration meeting on the Assessment 2 packets, and the one
+  page afterwards that explains the result using only what the room did.
 week: 11
 due: 2027-05-20T14:00:00+10:00
 weight: 15
@@ -61,10 +60,6 @@ related:
   - team/ravi-menon
   - team/hannah-byrne
 ---
-
-Held in the week 11 stand-up, Thursday 20 May, 2 pm, in your Assessment 2
-group. The prediction is due the night before. The page is due by midnight
-the same day.
 
 ## The brief
 
@@ -159,11 +154,11 @@ room cannot, so it is not.
 
 ## What you submit
 
-Your prediction in the thread by Wednesday midnight. Your two minutes, or
-your chairing, in the room. Then one PDF, one page, named
-`SLOP3385-<uid>-calibration.pdf`, in the Assessment 3 thread by midnight.
-This assessment is the course's own system applied to work you were handed
-by lottery; the policies page has said so since week 1.
+The prediction in the thread. Your two minutes, or your chairing, in the
+room. Then one PDF, one page, named `SLOP3385-<uid>-calibration.pdf`, in
+the Assessment 3 thread. This assessment is the course's own system applied
+to work you were handed by lottery; the policies page has said so since
+week 1.
 
 ## Marker's checklist
 

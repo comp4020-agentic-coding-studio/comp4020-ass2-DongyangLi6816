@@ -1,8 +1,9 @@
 ---
 title: Credit
-description:
-  How credit for a team's work gets assigned, why the launch email is the only
-  artefact most senior people read, and what its author line does.
+description: >-
+  Who reads what about a project, how a promotion packet is assembled from
+  public associations, and what the research found when a mixed team's credit
+  was left unassigned.
 week: 6
 date: 2027-03-30
 teachers:

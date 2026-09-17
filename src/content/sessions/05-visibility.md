@@ -16,9 +16,8 @@ spec:
   - you have written the one-paragraph public post that thing should have had
 ---
 
-Of the three things your manager brings to calibration, the biggest is their
-memory of your quarter. It is not a fair memory. It is built out of what
-crossed their screen.
+Tuesday's lecture said memory wins. This stand-up is about what yours has
+left in your manager's, and what it has not.
 
 ## Bring
 

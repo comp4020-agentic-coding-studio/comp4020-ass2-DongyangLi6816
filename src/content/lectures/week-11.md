@@ -1,9 +1,9 @@
 ---
 title: The rat race
-description:
-  What happens to a signal once everyone can produce it, why a forced
-  distribution stops paying within a few years, and the model that shows the
-  race is the equilibrium, not a failure of it.
+description: >-
+  Saturation, the rat race modelled and measured in two law firms, the
+  simulation in which a forced distribution's gains fade, and what a room
+  falls back on when nothing separates the names.
 week: 11
 date: 2027-05-18
 teachers:

@@ -1,9 +1,8 @@
 ---
 title: Presence
-description:
-  Being seen is rated separately from what you did. What passive presence
-  makes a manager infer, why the inference is automatic, and who cannot
-  produce the signal.
+description: >-
+  Passive face time and the research behind it, the 2026 proxies that
+  replaced the car park, and why this is a different week from week 5.
 week: 8
 date: 2027-04-27
 teachers:

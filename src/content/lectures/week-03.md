@@ -1,9 +1,9 @@
 ---
 title: Who speaks for you
-description:
-  Calibration is advocacy. Who argues for you, who writes your peer feedback,
-  who arbitrates, and why the research says being liked moves a rating
-  further than being impressive.
+description: >-
+  The cast of a calibration meeting, the peers you nominate, and two
+  literatures: incentive theory on subjective evaluation, and the research on
+  impression management.
 week: 3
 date: 2027-03-09
 teachers:

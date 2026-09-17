@@ -1,9 +1,9 @@
 ---
 title: Now you're the manager
-description:
-  A review system is a design, and every trick in this course is a flaw in
-  one. Backward design, the rater problem, and what a fair procedure has to
-  give the people it rates.
+description: >-
+  Backward design and constructive alignment moved into a review system, the
+  rater problem, procedural justice, and naming who pays under your own
+  design.
 week: 12
 date: 2027-05-25
 teachers:

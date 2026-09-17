@@ -49,8 +49,6 @@ related:
   - sessions/12-now-you-are-the-manager
 ---
 
-Thursdays at 2 pm, weeks 1 to 12. Nothing to hand in.
-
 ## The brief
 
 > Be in the room when it starts. Bring the thing.
@@ -81,6 +79,4 @@ stand-up is a thing done in a room with other people, and the forum cannot
 hold it. The best-ten rule is the course's answer to who pays, and it is a
 partial one. Say so in week 8, when the tutor asks.
 
-## What you submit
-
-Nothing. The tutor keeps the sheet.
+There is nothing to hand in. The tutor keeps the sheet.
