@@ -31,6 +31,19 @@ const holisticMarking = z.object({
   description: z.string().trim().min(40),
 });
 
+// What each grade looks like for this piece, top band first. Five rows, the
+// ANU grades, each with the mark range it covers and a sentence a marker
+// could hold a script against.
+const gradeBands = z
+  .array(
+    z.object({
+      grade: z.enum(["HD", "D", "CR", "P", "N"]),
+      range: z.string().trim().min(1),
+      expectation: z.string().trim().min(20),
+    }),
+  )
+  .length(5);
+
 export const collections = {
   sessions: defineCollection({
     loader: courseNodeLoader("sessions"),
@@ -54,6 +67,7 @@ export const collections = {
         // A weekly piece is marked at every stand-up and has no single due
         // date; `week` and `due` then name the last stand-up it is marked at.
         cadence: z.enum(["weekly"]).optional(),
+        bands: gradeBands.optional(),
       })
       .loose(),
   }),
@@ -69,6 +83,30 @@ export const collections = {
           .string()
           .regex(/^\/decks\/[a-z0-9-]+\/$/)
           .optional(),
+      })
+      .loose(),
+  }),
+
+  // The twelve engineers whose packets Assessments 2 and 3 are argued from
+  // and whose team Assessment 4 designs for. A dossier is a content node like
+  // any other, so it carries `related:` edges and appears in the API.
+  team: defineCollection({
+    loader: courseNodeLoader("team"),
+    schema: courseNodeSchema
+      .extend({
+        level: z.string().trim().min(1),
+        tenure: z.string().trim().min(1),
+        owns: z.string().trim().min(1).optional(),
+        numbers: z.object({
+          ticketsClosed: z.number().int().nonnegative(),
+          prsMerged: z.number().int().nonnegative(),
+          incidentsHandled: z.number().int().nonnegative(),
+          statusActiveHoursPerWeek: z.number().nonnegative(),
+          meetingsAttendedPercent: z.number().int().min(0).max(100),
+          docComments: z.number().int().nonnegative(),
+          channelPosts: z.number().int().nonnegative(),
+          directMessages: z.number().int().nonnegative(),
+        }),
       })
       .loose(),
   }),

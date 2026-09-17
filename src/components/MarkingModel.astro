@@ -9,11 +9,18 @@ interface HolisticMarking {
   description: string;
 }
 
-interface Props {
-  marking: WeightedMarking | HolisticMarking;
+interface Band {
+  grade: "HD" | "D" | "CR" | "P" | "N";
+  range: string;
+  expectation: string;
 }
 
-const { marking } = Astro.props;
+interface Props {
+  marking: WeightedMarking | HolisticMarking;
+  bands?: Band[];
+}
+
+const { marking, bands = [] } = Astro.props;
 ---
 
 <section aria-labelledby="how-marked">
@@ -21,13 +28,84 @@ const { marking } = Astro.props;
   {marking.mode === "holistic" ? (
     <p>{marking.description}</p>
   ) : (
-    <table>
-      <thead><tr><th scope="col">Criterion</th><th scope="col">Weight</th></tr></thead>
-      <tbody>
-        {marking.criteria.map((criterion) => (
-          <tr><td>{criterion.name}</td><td>{criterion.weight}%</td></tr>
-        ))}
-      </tbody>
-    </table>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col">Criterion</th><th scope="col">Weight</th></tr></thead>
+        <tbody>
+          {marking.criteria.map((criterion) => (
+            <tr><td>{criterion.name}</td><td>{criterion.weight}%</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+  {bands.length > 0 && (
+    <>
+      <h3>What each grade looks like</h3>
+      <div class="table-scroll">
+        <table class="bands">
+          <thead>
+            <tr><th scope="col">Grade</th><th scope="col">Marks</th><th scope="col">What the marker sees</th></tr>
+          </thead>
+          <tbody>
+            {bands.map((band) => (
+              <tr>
+                <th scope="row">{band.grade}</th>
+                <td>{band.range}</td>
+                <td>{band.expectation}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   )}
 </section>
+
+<style>
+  /* A table may be wider than a phone; the page body never scrolls
+     sideways, so the table scrolls inside its own box instead. */
+  .table-scroll {
+    overflow-x: auto;
+  }
+
+  .bands th[scope="row"],
+  .bands td:nth-child(2) {
+    white-space: nowrap;
+    vertical-align: top;
+  }
+
+  .bands td:last-child {
+    min-width: 18rem;
+  }
+
+  /* On a phone the three columns do not fit, and a sideways-scrolling table
+     hides the one column worth reading. Each band becomes a block instead:
+     grade and marks on one line, the expectation under them at full width. */
+  @media (max-width: 30rem) {
+    .bands thead {
+      display: none;
+    }
+
+    .bands tr,
+    .bands td:last-child {
+      display: block;
+    }
+
+    .bands tr {
+      padding-block: var(--at-spacing-sm);
+      border-block-end: 1px solid var(--at-border);
+    }
+
+    .bands th[scope="row"],
+    .bands td:nth-child(2) {
+      display: inline-block;
+      padding-inline-end: var(--at-spacing-sm);
+    }
+
+    .bands td:last-child {
+      min-width: 0;
+      padding-inline-start: 0;
+    }
+  }
+</style>

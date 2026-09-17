@@ -14,6 +14,22 @@ marking:
       weight: 50
     - name: You brought what the week's Bring section asked for
       weight: 50
+bands:
+  - grade: HD
+    range: "8–10"
+    expectation: "On time with the item at ten or more stand-ups, or the equivalent in half marks."
+  - grade: D
+    range: "7–7.5"
+    expectation: "Nine good weeks, or ten with the item forgotten once or twice."
+  - grade: CR
+    range: "6–6.5"
+    expectation: "Seven or eight good weeks."
+  - grade: P
+    range: "5–5.5"
+    expectation: "Five or six good weeks."
+  - grade: N
+    range: "0–4.5"
+    expectation: "Fewer than five. If something is going on, the extension rule on the policies page applies."
 spec:
   - each stand-up is worth one mark, half for presence and half for the item
   - the best ten of your twelve marks count, scaled to ten percent of the course
@@ -33,7 +49,7 @@ related:
   - sessions/12-now-you-are-the-manager
 ---
 
-Marked at every stand-up, Thursdays at 2 pm, weeks 1 to 12.
+Thursdays at 2 pm, weeks 1 to 12. Nothing to hand in.
 
 ## The brief
 
