@@ -24,6 +24,8 @@ sources:
     url: https://techcrunch.com/2026/07/25/the-running-list-major-tech-layoffs-in-2026-where-employers-cited-ai/
   - title: "Sucher and Gupta, Layoffs that don't break your company (Harvard Business Review, 2018)"
     url: https://hbr.org/2018/05/layoffs-that-dont-break-your-company
+  - title: "Datta, Guthrie, Basuil and Pandey, Causes and effects of employee downsizing (Journal of Management, 2010)"
+    url: https://journals.sagepub.com/doi/10.1177/0149206309346735
 related:
   - sessions/10-the-layoff-list
 ---
@@ -45,9 +47,11 @@ Cloudflare.
 
 Read the sources. Then notice what they have in common: a percentage, a
 function, a cost, a memo. Ratings appear in some of them as the framing. In
-none of them are ratings the mechanism. Sucher and Gupta's review of the
-research found layoffs are mostly cost-driven and rarely deliver what they
-promise. The person with the best rating on the team is on the list when the
+none of them are ratings the mechanism. Datta and colleagues' 2010 review of
+ninety-one studies of downsizing found the decision is driven by cost, by
+what other firms are doing and by the share price, and that it rarely
+delivers what it promised; Sucher and Gupta's shorter review found the same.
+In neither is the performance of the people cut an input. The person with the best rating on the team is on the list when the
 team is.
 
 ## Outline

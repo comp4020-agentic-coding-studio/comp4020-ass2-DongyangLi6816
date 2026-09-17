@@ -1,5 +1,5 @@
 ---
-title: Everyone is doing it
+title: The rat race
 description:
   When everyone games the measure, the measure stops working and the whole
   team runs faster to stay in place. This week the course's own calibration
@@ -39,7 +39,10 @@ saturated behaviours are re-baselined as expected.
 The calibration runs for forty minutes. Then, with the ratings fixed, the
 group spends twenty minutes explaining the outcome without reference to the
 quality of the reports: who spoke first, who the chair knew, which report had
-a number in its first line. The explanations are usually complete.
+a number in its first line. The explanations are usually complete. Then one
+last question for the room: who would have left before this cycle if they
+could have? That is who pays for this week's trick, and it is everyone who
+stayed.
 
 ## How you know it worked
 

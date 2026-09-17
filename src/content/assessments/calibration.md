@@ -5,26 +5,26 @@ description:
   calibration meeting with two "exceeds" slots and one "below" to fill.
 week: 11
 due: 2027-05-20T14:00:00+10:00
-weight: 25
+weight: 20
 marking:
   mode: holistic
   description:
-    Marked as a whole on two things. How well you argued for someone else's
-    work, in the room, under the curve, from three minutes' preparation and
-    a document you did not write. And whether, afterwards, you could account
-    for the outcome using the mechanisms from weeks 1 to 8 rather than the
-    quality of the reports. Your own report's rating in the room does not
-    affect your mark.
+    Marked as a whole on the page you write afterwards. The three minutes in
+    the room are pass or fail. You argued for someone else's report, or you
+    did not. The mark is for whether, with the ratings fixed, you could
+    account for the outcome using the mechanisms from weeks 1 to 8 rather
+    than the quality of the reports. Your own report's rating in the room
+    does not affect your mark.
 spec:
-  - you argued for a classmate's field report in the room, not your own
+  - you argued for a classmate's field report in the room, not your own, and that is pass or fail
   - the room reached a rating for every report under the curve it was given
-  - you wrote one page afterwards explaining the outcome in terms of the room
+  - you wrote one page afterwards explaining the outcome in terms of the room, and that page is what is marked
 related:
   - sessions/01-welcome-to-calibration
   - sessions/03-the-org-chart
   - sessions/09-the-reorg
   - sessions/10-the-layoff-list
-  - sessions/11-everyone-is-doing-it
+  - sessions/11-the-rat-race
 ---
 
 Held in the week 11 stand-up, Thursday 20 May, 2 pm. The written page is due
@@ -45,6 +45,13 @@ Afterwards, with the ratings fixed, you write one page explaining the
 outcome. The rule is that you cannot refer to the quality of any report. You
 can refer to who spoke first, who had a number in their first sentence, who
 the chair had seen before, and anything else from weeks 1 to 8.
+
+## Why the three minutes are not marked
+
+It would be the most rater-dependent mark in the course. Week 1 told you how
+much of a rating is the rater. A course that then graded your performance in
+a room on the tutor's impression of it would be the thing it describes. The
+page can be marked against a rubric. The room cannot, so it is not.
 
 ## What you submit
 
