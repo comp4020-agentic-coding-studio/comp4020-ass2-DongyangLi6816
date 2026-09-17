@@ -151,3 +151,27 @@ in the middle.
 
 **Promotion.** Rule, for `CLAUDE.md` if it recurs: match strings come from the
 file, and a multi-file edit verifies all its matches before it writes one.
+
+## The screenshot stopped 4,000 pixels short of the thing being checked
+
+**What happened.** The capture script clips a page at 4,000 CSS pixels to
+keep images readable. The new grade-band tables sit at the bottom of the
+assessment pages, below that line on both viewports. The first captures of
+`/assessments/ungameable-review/` reported no overflow and showed a page that
+looked fine, and neither fact said anything about the tables, because the
+tables were not in the picture.
+
+**What it cost.** One round of looking at the wrong evidence. Caught because
+the plan named the band table as the thing to look at and the picture did
+not contain one. Recaptured at full height, the phone view showed the table
+scrolling sideways inside its box, which was the finding, and it was fixed.
+
+**What would have caught it earlier.** A rule the harness already states,
+applied to the sensor itself: name what you exercised. A capture reports
+the page height it took and the height it clipped to; a claim about
+something below the clip is not a claim. The script now takes the clip height
+from the environment and prints both numbers, so the next reader can see
+when a picture is a fragment.
+
+**Promotion.** Rule, for `CLAUDE.md` if it recurs: a screenshot verifies only
+what is inside it, and the capture must say what it left out.

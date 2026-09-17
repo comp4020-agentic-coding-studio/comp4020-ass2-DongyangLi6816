@@ -186,46 +186,111 @@ standing in it. Builds on: everything. **Assessment 4 due Friday 28 May.**
 
 ## Assessment (100%)
 
+Revised 17 September 2026. Five pieces, every one weighted against named
+criteria, every one with five grade bands (HD 80–100, D 70–79, CR 60–69,
+P 50–59, N 0–49) written in the piece's own terms and rendered under "How it
+is marked". Each written piece has the same skeleton a real assignment sheet
+has: the brief, what to write (sections and limits), rules, what you submit
+(format, filename, thread, time), a timeline where the piece spans weeks, and
+a marker's checklist the tutor works down.
+
 | # | Task | Weight | Set | Due | Draws on weeks |
 | --- | --- | --- | --- | --- | --- |
-| 1 | The self-review | 15% | wk 4 | Fri 2 Apr (wk 6) | 1, 2, 4 |
-| 2 | Field report | 20% | wk 8 | Fri 7 May (wk 9) | 3, 5, 6, 7, 8 |
-| 3 | Calibration | 20% | wk 11 | in the wk 11 workshop (17 May) | 1, 3, 9, 10, 11 |
-| 4 | Design an ungameable review | 45% | wk 7 | Fri 28 May (wk 12) | all |
+| 0 | Stand-up attendance | 10% | wk 1 | every stand-up, best 10 of 12 | all |
+| 1 | The self-review | 15% | wk 4 | Fri 2 Apr (wk 6) | 1, 2, 4, 6 |
+| 2 | The manager's case | 20% | wk 8 | Fri 7 May (wk 9) | 3 to 8, and the team |
+| 3 | Calibration | 15% | wk 11 | prediction Wed 19 May, room Thu 20 May, page by midnight | 1, 3, 9, 10, 11, and the team |
+| 4 | Design an ungameable review | 40% | wk 7 | design Mon 24 May 9 am, justification Fri 28 May 5 pm | all |
+
+**0. Stand-up attendance (10%).** One mark per stand-up: half for being in the
+room when it starts, half for bringing what the page's Bring section asks
+for. Best ten of twelve count, so two misses need no extension. The tutor
+records it in the room. The course teaches in week 8 that presence is a
+proxy; the piece says so on its own page and the week 8 stand-up points at
+the sheet. It has `cadence: weekly` in frontmatter: the semester track shows
+it no due badge, the weights bar lists it first, and its `week`/`due` name
+the last stand-up only because the schema requires them. Its bands are in
+marks out of ten rather than the university's ranges, and the spec test
+allows that for a weekly piece only.
 
 **1. The self-review (15%).** Write a self-review, in corporate register, for a
 completely ordinary quarter of work: a group project, a part-time job, a
 semester of a club. Then, on a second page, write the honest version in plain
-English. Marked (weighted): rubric coverage 40, plausibility of the numbers 30,
-the honest version 30.
+English. Page one is a header naming the rubric and three to five statements
+of at most 60 words, each bracketed with its rubric line and every number
+tagged (C) checkable or (E) estimated; page two is under 300 words, second
+person, no untagged numbers. Marked (weighted): rubric mapping 40, tagged and
+plausible numbers 30, the honest version 30.
 
-**2. Field report (20%).** Spot one trick from weeks 3–8 in the wild and
-explain the mechanism it exploits, with what would have to change about the
-system for the trick to stop working. Marked (weighted): the observation 30,
-the mechanism 40, the fix 30.
+**2. The manager's case (20%).** Replaces the field report, which asked
+students to observe a trick in a workplace most of them do not have, and
+which markers could not distinguish from a made-up one. Now the course
+supplies the field: twelve engineers' packets on the team page (below).
+Groups are drawn in the week 8 stand-up and each student takes one packet by
+lottery. Page one is the case they would argue in the room, 450 words, a
+proposed rating and the curve, three claims each tied to a packet item with
+its evidence type named. Page two is what they do not believe: every trick in
+the packet by week, what it would take to check, and the rating they would
+give if it all checked out, with the gap explained. This is the manager's
+side of the table, which A1 is the employee's side of, and it is the
+preparation a real manager does before calibration with the honest half
+written down. Marked (weighted): the case 35, the tricks found 30, the checks
+15, two minutes and an honest gap 20.
 
-**3. Calibration (20%).** In the week 11 workshop, students are grouped into
-"teams" of eight with a tutor as chair. Each student argues for a classmate's
-field report, not their own; the team has two "exceeds" slots and must place
-one report in "below". The three minutes in the room are pass or fail; the
-mark is for the page written afterwards explaining the outcome in terms of the
-room. The course does not mark the three minutes because that would be the
-most rater-dependent mark in it, and week 1 says how much of a rating is the
-rater. Dropped from 25% for the same reason. This is the week the course's
-own system is turned on the students, and the policies page warns them from
-day one.
+**3. Calibration (15%).** The A2 group is the room, whatever its size,
+because teams are; the curve is fixed at one in five exceeds and one in ten
+below, at least one below, rounded (six is 1/4/1, eight 2/5/1, twelve 2/9/1).
+A student chair is drawn on Wednesday night: calls names in an order they do
+not explain, times cases at two minutes, runs the ten minutes that fit the
+curve, keeps the record sheet. The chair's own engineer has nobody to argue
+for them and is read flat from the packet for one minute, which is week 9
+made literal; every room has one. The tutor floats, arbitrates and signs the
+sheets. Forty-five minutes in a fifty-minute stand-up; the old twenty-minute
+spoken debrief becomes the page. Three things make the page markable rather
+than a participation mark: a prediction sealed the night before (marked on
+the explanation of the gap, not on accuracy), the chair's record as the fact
+base every claim is checked against, and a counterfactual that only someone
+who saw how the below was produced can write. Being in the room is a gate:
+pass or fail, a fail caps at 49, and neither the two minutes nor the
+engineer's result is marked, for the reason week 1 gives. Marked (weighted):
+the record 25, the mechanisms 35, the prediction and the gap 25, the
+counterfactual 15.
 
-**4. Design an ungameable review (45%).** Design a performance review system
-for a team of ten engineers: what it measures, who decides, how the evidence is
-gathered. Submit it by the Monday of week 12; the rest of the class then has
-until Thursday to submit the best trick they can find against it. Two questions
-no design may skip, on the front page: what does calibration's job of reducing
-rater bias if the meeting is removed, and how a rated person contests a result.
-Marked (holistic): the design is judged on what it survives and on those two
-answers, and the written justification on whether it names who pays under the
-design, using the weekly cost lines, rather than claiming nobody does. Raised
-from 40% because the three new requirements make it the course's terminal
-performance in full.
+**4. Design an ungameable review (40%).** A review system for the team
+whose packets the student argued from and calibrated over, in two parts. The design, two pages, posted by 9 am Monday of week
+12: a front page with three answers (what replaces calibration, how a rating
+is contested, who pays) and a trick table with a row for each of weeks 1 to
+11 (the trick, what it stands on, closed or conceded, how). The class attacks
+it until the Thursday stand-up. The justification, up to 1,000 words, by 5 pm
+Friday: what it cost and who pays for each closure, what beat it (cannot be
+empty), and what you would ship. An optional draft goes to the tutor in week
+10. Marked (weighted): coverage 25, the rater 20, contest 15, who pays 25,
+survival 15. Converted from holistic so that the two front-page questions and
+"who pays" are criteria a marker can score rather than sentences in a
+paragraph; the argument the paragraph carried (a costless design sits low) now
+lives in the N band and in the who-pays criterion. Down from 45% to make room
+for attendance; still two fifths of the course.
+
+## The team
+
+A fifth content collection, `team`: twelve fictional engineers on one
+payments team at a company that runs a curve, whose manager moved teams in
+the April reorg. Each dossier is one quarter as it reaches the new manager:
+a self-review in the course's corporate register, two peer paragraphs (one
+nominated, one assigned), three notes the old manager left, eight dashboard
+figures, the announcement if there was one, and where the person sits.
+Each packet carries one or two things the course has a week for, and the
+set covers the course: unverifiable numbers and a borrowed launch email
+(Priya), ticket splitting (Lena), presence (Marcus), the rebuild (Aisha) and
+the person who paid for it (Kenji), the bus factor (Daniel), the skip-level
+coffee (Sofia), the public feed (Ravi), the new hire with nobody to nominate
+(Jonas), the carer who is offline at four (Hannah), the incident handler who
+only exists in direct messages (Tom), and one honest, tagged, unremarkable
+quarter (Grace). A2 argues from them, A3 calibrates them, A4 designs for
+them; `spec/course.test.ts` holds the collection to twelve, each with the six
+packet parts, and each drawn on by all three assessments. Registered in
+`graphCollections` so the edges render both ways and the packets are in the
+API.
 
 ## Policies page
 
@@ -290,6 +355,14 @@ lies to the student about what it is.
    least one assessment. No orphan content; alignment is real, not claimed.
 5. No assessment is due before the last week it draws on, and no due date lands
    in the break.
+5a. Every assessment has five grade bands, HD to N in order, in the
+   university's ranges (marks out of ten for the weekly piece), no two saying
+   the same thing; and every weighted piece's criteria sum to 100. Guards the
+   promise on the assessment index that each piece says what each grade looks
+   like.
+5b. The team is twelve, each dossier has the six packet parts and eight
+   figures, and every engineer is drawn on by A2, A3 and A4. Guards the
+   packets against becoming set dressing.
 6. Every week lists at least one `sources` URL. The course's promise that every
    trick is real.
 7. A banned-phrase list ("delve", "in today's fast-paced", "it's important to
