@@ -14,7 +14,7 @@ buildsOn: [3, 7]
 spec:
   - you have redrawn your week-3 org chart after a reorg you invented
   - you can say which of your tricks from weeks 3 to 8 survived it
-  - your field report for Assessment 2 is submitted by Friday
+  - your manager's case for Assessment 2 is submitted by Friday
 ---
 
 The first stand-up of the block where things stop working. Weeks 3 to 8 gave
@@ -46,4 +46,5 @@ it was written for a stranger.
 You can say what a reorg does to each trick you know, and you have noticed
 that the one that survives best is the one that makes you a risk to remove,
 and therefore a risk to move anywhere else.
-Assessment 2 is due on Friday.
+Assessment 2, the case for an engineer whose manager left in exactly this
+kind of reorg, is due on Friday.

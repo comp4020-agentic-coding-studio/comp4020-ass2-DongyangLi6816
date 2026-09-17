@@ -23,8 +23,9 @@ This week you are the designer.
 
 ## Bring
 
-Your Assessment 4 design, submitted on Monday: a review system for a team of
-ten engineers, with its three answers on the front page. What replaces
+Your Assessment 4 design, submitted on Monday: a review system for the
+team whose packets you argued over last week, with its three answers on the
+front page. What replaces
 calibration. How a rating is contested. Who pays. Also bring your brag
 document from week 4, which by now runs to nine weeks and is the last thing
 this course asks you to look at.
@@ -36,8 +37,10 @@ spent eleven weeks learning how to read one.
 
 ## What happens
 
-Designs are pinned around the room. You spend the first half attacking other
-people's: for each one, name the trick from this course that beats it, or
+Designs are pinned around the room, grouped by calibration room, and you
+attack the designs of the people you sat with last week, because they know
+where every packet's trick was and so do you. You spend the first half
+attacking other people's: for each one, name the trick from this course that beats it, or
 concede that you cannot find one, then check the front page. A design with
 no answer on the rater has reopened week 1. A design with no way to contest
 a rating has reopened week 11. You spend the second half at your own design,

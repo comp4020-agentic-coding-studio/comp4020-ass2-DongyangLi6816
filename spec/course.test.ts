@@ -184,6 +184,69 @@ describe("every trick is real", () => {
   });
 });
 
+describe("the marks are legible", () => {
+  // A student should be able to read what each grade looks like before they
+  // start, on every piece, in the university's own bands and in the piece's
+  // own terms. Five rows, in order, no two saying the same thing.
+  const GRADES = ["HD", "D", "CR", "P", "N"];
+  const ANU_RANGES = ["80–100", "70–79", "60–69", "50–59", "0–49"];
+
+  it("gives every assessment five grade bands in order, each in its own words", () => {
+    for (const assessment of assessments) {
+      const bands = assessment.meta?.bands;
+      expect(Array.isArray(bands), `${assessment.id} has no grade bands`).toBe(true);
+      const rows = bands as { grade?: unknown; range?: unknown; expectation?: unknown }[];
+      expect(rows.map((row) => row.grade), `${assessment.id} bands out of order`).toEqual(GRADES);
+      if (assessment.meta?.cadence !== "weekly") {
+        expect(rows.map((row) => row.range), `${assessment.id} does not use the university's ranges`).toEqual(ANU_RANGES);
+      }
+      const texts = rows.map((row) => String(row.expectation).trim());
+      expect(new Set(texts).size, `${assessment.id} repeats a band description`).toBe(5);
+    }
+  });
+
+  it("has every weighted piece's criteria add up to the whole mark", () => {
+    for (const assessment of assessments) {
+      const marking = assessment.meta?.marking as { mode?: string; criteria?: { weight: number }[] } | undefined;
+      if (marking?.mode !== "weighted") continue;
+      const total = (marking.criteria ?? []).reduce((sum, c) => sum + c.weight, 0);
+      expect(total, `${assessment.id} criteria sum to ${total}`).toBe(100);
+    }
+  });
+});
+
+describe("the team is real", () => {
+  // Assessments 2, 3 and 4 are argued from, calibrated over and designed
+  // for the same twelve packets. A packet nobody is assessed on is set
+  // dressing; a missing packet is a student with nothing to argue.
+  const team = nodesOfType("team");
+  const ASSESSED_FROM = ["assessments/managers-case", "assessments/calibration", "assessments/ungameable-review"];
+
+  it("has twelve engineers, each with the six parts of a packet", () => {
+    expect(team.length, "the team is not twelve").toBe(12);
+    for (const engineer of team) {
+      const numbers = engineer.meta?.numbers as Record<string, unknown> | undefined;
+      expect(numbers, `${engineer.id} has no numbers`).toBeDefined();
+      expect(Object.keys(numbers ?? {}).length, `${engineer.id} is missing a dashboard figure`).toBe(8);
+      // The built page, not the API: the index carries no bodies, and the
+      // heading a reader sees is the claim.
+      const page = readFileSync(resolve("dist", engineer.id, "index.html"), "utf8");
+      for (const part of ["Self-review", "Peer feedback", "What the last manager left", "The announcement", "Where they sit"]) {
+        expect(page, `${engineer.id} has no ${part} section`).toContain(`>${part}<`);
+      }
+    }
+  });
+
+  it("has every engineer argued from, calibrated over and designed for", () => {
+    for (const engineer of team) {
+      for (const assessmentId of ASSESSED_FROM) {
+        const assessment = assessments.find((node) => node.id === assessmentId);
+        expect(assessment?.related?.includes(engineer.id), `${assessmentId} does not draw on ${engineer.id}`).toBe(true);
+      }
+    }
+  });
+});
+
 describe("the prose reads like a person wrote it", () => {
   // Stock phrases that mark text nobody chose. Corporate register belongs in
   // the trick sections and is deliberate there; these belong nowhere.

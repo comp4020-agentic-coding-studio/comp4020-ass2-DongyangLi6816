@@ -53,4 +53,5 @@ whom.
 
 You can tell a signal of presence from work, you have noticed that you
 cannot always do it for other people, and you know who on your team the
-signal was never available to. Assessment 2 is set this week.
+signal was never available to. Assessment 2 is set this week: the groups
+are drawn at the end of the stand-up and each of you leaves with a packet.

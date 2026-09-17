@@ -31,7 +31,8 @@ Neither was written about performance reviews, and both apply directly,
 because a review system is a course with a rubric and a calibration meeting
 at the end.
 
-Start from what you want to be true of a team of ten engineers. Then ask what
+Start from what you want to be true of the team whose packets you argued
+from. Then ask what
 evidence would show it, and who could gather that evidence without the
 person being rated writing it themselves. Then ask, for each trick in this
 course, where it stands. Splitting tickets needs a ticket count. The launch
