@@ -225,3 +225,111 @@ throwaway role rather than with the evening's real work behind it.
 **Promotion.** Rule, for `CLAUDE.md` if it recurs: a new agent definition
 is not available until the session restarts, so dispatch a trivial one to
 prove the roster reloaded before writing the work order that depends on it.
+
+## The content-writer returned its report in chat, not in the file
+
+**What happened.** The work order for `content-writer` listed
+`docs/handoff/08-report-content-writer.md` under `writes` and its role file
+says to write a report at the path the work order names. The role finished the
+eleven lecture edits, wrote no file, and said its runtime instructions
+told it not to write report `.md` files, which overrode the work order. The
+edits were correct: `git status --porcelain` showed only the eleven lecture
+files, and the word counts I recomputed matched the ones it reported. The
+report existed only as a message.
+
+**What it cost.** One extra round trip: a message asking the role to write the
+file, and a second wait. Nothing was lost, but had I not read the status list
+against the writes list I would have carried on with no report on disk, and the
+handoff directory is meant to be the whole record of what each role did.
+
+**What would have caught it earlier.** The dispatcher's check compared
+`git status --porcelain` against the writes list in one direction only, for
+extra files. A file that should exist and does not is the same mismatch. The
+check is now both ways: every path in `writes` is present in the status output,
+not just every path in the status output present in `writes`.
+
+**Promotion.** Not yet. If it recurs on another role, it is a `CLAUDE.md` rule
+for dispatch: after every dispatch, diff the status list against the writes
+list in both directions.
+
+## A number in a work order that nobody had counted
+
+**What happened.** In the work order for `page-builder` I wrote that week 11's
+mechanism is "a 41-word sentence", to tell the builder which row to size the
+layout against. I had not counted it. Counting with `wc -w` gave 33. I found it
+because I was about to dispatch and checked the other figure in the same
+sentence, not because a sensor caught it.
+
+**What it cost.** Nothing landed: no role had read the order, so I corrected the
+file before dispatch. Had the builder sized a stack point against a mechanism
+eight words longer than the real one, the measurement would have been of a
+row that does not exist.
+
+**What would have caught it earlier.** A figure in a work order is a claim
+about the repo, and the repo can be asked. The order now states how the figure
+was taken (`counted with wc -w`) so the role can repeat it.
+
+**Promotion.** Rule, for `CLAUDE.md` if it recurs: a number in a work order is
+measured with a command, and the command goes in the order beside it.
+
+## Timestamps in the handoff files were typed, not read
+
+**What happened.** The `written:` field in the eight handoff files I wrote
+before the page-reader's (04 to 07, 09, 10, 12 and 13) holds times I typed from a rough sense of
+the evening: 15:10, 15:25, 15:40 and 16:10. I did not run `date`. When I did,
+before taking the captures, it read 15:23, so files 09, 10, 12 and 13 claim a
+time that had not yet happened.
+
+**What it cost.** The field exists so that the order of writing can be read off
+the frontmatter. For those files it cannot: the numbering and the file mtimes
+are the only true ordering. Roles read some of these files and were told a wrong
+time, which changed nothing they did, but a role that had to decide whether a
+capture was stale against `written:` would have decided on a fiction. I did not
+edit the files, because the handoff format says an order is a record of what a
+role was told, and the wrong timestamp is part of that record.
+
+**What would have caught it earlier.** Taking the value from the clock, not from
+memory. From the file 15 on, the timestamp comes from `date` in the same command
+that writes the file.
+
+**Promotion.** Rule, for `CLAUDE.md` if it recurs: a time in a handoff file is
+read from `date`, never typed.
+
+## A measurement that reported no failures over zero rows
+
+**What happened.** For the final 390px measurement I passed twelve page paths to
+the builder's script through an unquoted shell variable. The shell here is zsh,
+which does not split an unquoted variable into words, so the script received one
+argument holding all twelve paths, opened one nonexistent URL per viewport and
+theme, and found no table. My summary script parsed zero rows and printed
+`failures: []`.
+
+**What it cost.** One rerun. It cost nothing else because the script printed the
+row count beside the failure list: `0 measurements`, where the second run
+printed `48 measurements (expect 48)`. A result of `failures: []` alone would
+have read as twelve pages passing.
+
+**What would have caught it earlier.** The check already had the sensor: a
+count printed next to the verdict, with the expected number. A list of failures
+over an empty input cannot come out wrong, which is the harness's own test for a
+check that proves nothing.
+
+**Promotion.** Rule, for `CLAUDE.md` if it recurs: a sensor that reports "no
+failures" also reports how many things it looked at and how many it should have.
+
+## A done-when that compared against a line HEAD never had
+
+**What happened.** Order 19 for `content-writer` said `git diff -U0` on
+`week-11.md` must show one line removed and one added. The old `seen:` line was
+added by the earlier order and was never committed, so the diff against HEAD can
+only ever show one line added. The role reported item 1 as not met, and said why.
+
+**What it cost.** Nothing in the file; the line was right. It cost a done-when
+that could not pass, which a role has to report as a failure when the fault is in
+the order.
+
+**What would have caught it earlier.** Writing the check against the state the
+role starts from, not against HEAD, by naming what the file contains before the
+edit (`grep -c '^seen: ' ` is 1 before and 1 after).
+
+**Promotion.** Not yet.
