@@ -1,0 +1,172 @@
+---
+/**
+ * One week's trick, the mechanism it exploits, and a place to watch it happen,
+ * side by side. The trick is read from that week's stand-up, the mechanism and
+ * the `seen` line from the lecture; nothing is retyped here.
+ *
+ * Week 10 has none of the three on purpose, and the lecture page does not
+ * render this component for it. Any other week missing a value is a data
+ * error, so this throws with the week number rather than draw an empty cell
+ * or an absence marker that would say "this is the honest week" when it is a
+ * bug.
+ */
+import { getPublishedCollection } from "astro-course-university/content";
+
+interface Props {
+  week: number;
+  /** The lecture's `mechanism` key, untyped by the schema. */
+  mechanism: unknown;
+  /** The lecture's `seen` key, untyped by the schema. */
+  seen: unknown;
+}
+
+const { week, mechanism, seen } = Astro.props;
+
+const sessions = await getPublishedCollection("sessions");
+// `trick` rides through the loose schema untyped, so narrow it here.
+const trickValue = sessions.find((session) => session.data.week === week)?.data.trick;
+
+function required(name: string, value: unknown): string {
+  if (typeof value !== "string" || value.trim() === "") {
+    throw new Error(
+      `Week ${week} has no ${name}. Only week 10 may leave it out; every other week's lecture page needs it.`,
+    );
+  }
+  return value;
+}
+
+const cells = [
+  { label: "The trick", text: required("trick (on the stand-up entry)", trickValue), key: "trick" },
+  {
+    label: "The mechanism it exploits",
+    text: required("mechanism (on the lecture entry)", mechanism),
+    key: "mechanism",
+  },
+  { label: "Where you'd see it", text: required("seen (on the lecture entry)", seen), key: "seen" },
+];
+---
+
+<table class="week-table">
+  <caption class="visually-hidden">Week {week}: trick, mechanism and where you'd see it</caption>
+  <thead>
+    <tr>
+      {cells.map((cell) => <th scope="col" class={`col-${cell.key}`}>{cell.label}</th>)}
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      {
+        cells.map((cell) => (
+          <td class={`col-${cell.key}`}>
+            <span class="stacked-label">{cell.label}</span>
+            {cell.text}
+          </td>
+        ))
+      }
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  /* Only what the theme's bare table rules would otherwise add is undone here:
+     its tinted header, its row stripes and its cell padding. The look is the
+     week chain's label voice over plain body text, split by hairlines. */
+  .week-table {
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+    table-layout: fixed;
+  }
+
+  .week-table thead {
+    background: none;
+    color: var(--at-text-secondary);
+  }
+
+  .week-table th,
+  .week-table td {
+    padding: var(--at-spacing-sm);
+    vertical-align: top;
+  }
+
+  .week-table th:first-child,
+  .week-table td:first-child {
+    padding-inline-start: 0;
+  }
+
+  .week-table th:last-child,
+  .week-table td:last-child {
+    padding-inline-end: 0;
+  }
+
+  .week-table th {
+    border-block-end: 1px solid var(--at-divider);
+    font-family: var(--at-font-mono);
+    font-size: var(--at-font-size-xs);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .week-table tbody tr {
+    background: none;
+  }
+
+  .week-table td {
+    border-block-end: 1px solid var(--at-divider);
+    font-size: var(--at-font-size-base);
+  }
+
+  /* The mechanism is the longest sentence, the trick the shortest. Fixed table
+     layout takes the widths from the header row. */
+  .week-table th.col-trick {
+    width: 24%;
+  }
+
+  .week-table th.col-mechanism {
+    width: 44%;
+  }
+
+  .week-table th.col-seen {
+    width: 32%;
+  }
+
+  /* The labels that sit inside the cells exist only for the stacked layout. */
+  .stacked-label {
+    display: none;
+  }
+
+  /* Measured on week 11, the longest mechanism: three columns give it 9 lines at
+     750px and 8 at 755px, so from 47rem (752px) down it stacks. The column
+     headers are removed from the page (not just hidden) and each cell carries
+     its own label, so a screen reader reads every label once, next to its
+     sentence. */
+  @media (max-width: 47rem) {
+    .week-table,
+    .week-table tbody,
+    .week-table tr,
+    .week-table td {
+      display: block;
+    }
+
+    .week-table thead {
+      display: none;
+    }
+
+    .week-table td {
+      padding: var(--at-spacing-sm) 0;
+    }
+
+    .week-table td:first-child {
+      border-block-start: 1px solid var(--at-divider);
+    }
+
+    .stacked-label {
+      display: block;
+      margin-block-end: 0.15rem;
+      color: var(--at-text-secondary);
+      font-family: var(--at-font-mono);
+      font-size: var(--at-font-size-xs);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+  }
+</style>

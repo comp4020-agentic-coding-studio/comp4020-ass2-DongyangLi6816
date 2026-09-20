@@ -4,6 +4,7 @@ import { getPublishedCollection } from "astro-course-university/content";
 import RelatedContent from "astro-course-university/components/RelatedContent.astro";
 import ContentLayout from "astro-theme-university/layouts/ContentLayout.astro";
 import { withBase } from "astro-theme-university/url";
+import LectureWeekTable from "../../components/LectureWeekTable.astro";
 import TeachingTeam from "../../components/TeachingTeam.astro";
 import WeekChain from "../../components/WeekChain.astro";
 import WeekNav from "../../components/WeekNav.astro";
@@ -19,7 +20,11 @@ export async function getStaticPaths() {
 const { lecture } = Astro.props;
 const { Content } = await render(lecture);
 const title = `Week ${lecture.data.week}: ${lecture.data.title}`;
-// `mechanism` and `sources` are course-specific keys the schema passes through untyped.
+// The one week with no trick and no mechanism, on purpose. It gets no table and
+// keeps its "No mechanism this week." line; any other week missing a value
+// fails the build inside `LectureWeekTable`.
+const NO_TRICK_WEEK = 10;
+// `mechanism`, `seen` and `sources` are course-specific keys the schema passes through untyped.
 const mechanism = typeof lecture.data.mechanism === "string" ? lecture.data.mechanism : undefined;
 const sources = Array.isArray(lecture.data.sources)
   ? (lecture.data.sources as { title: string; url: string }[])
@@ -36,6 +41,15 @@ const context = await getWeekContext(lecture.data.week, "lectures");
     buildsOn={context.buildsOn}
     feeds={context.feeds}
   />
+  {
+    lecture.data.week !== NO_TRICK_WEEK && (
+      <LectureWeekTable
+        week={lecture.data.week}
+        mechanism={lecture.data.mechanism}
+        seen={lecture.data.seen}
+      />
+    )
+  }
   {
     mechanism ? (
       <p class="mechanism">
