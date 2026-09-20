@@ -9,6 +9,7 @@ date: 2027-05-25
 teachers:
   - ingrid-solano
 mechanism: A review is a design; it has to remove what each trick stands on, replace what calibration was for, and be fair enough in procedure that people accept the result.
+seen: A course website, where the marking rubric is published beside each assignment before anyone starts it.
 sources:
   - title: "Wiggins and McTighe, Understanding by Design"
     url: https://www.ascd.org/books/understanding-by-design-expanded-2nd-edition

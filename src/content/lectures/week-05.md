@@ -9,6 +9,7 @@ date: 2027-03-23
 teachers:
   - ingrid-solano
 mechanism: A manager's memory of your quarter is built from the traces that crossed their screen, and a private message leaves none.
+seen: A channel searched for your name, where the results list only what was posted in public.
 sources:
   - title: "Julia Evans, Get your work recognized: write a brag document"
     url: https://jvns.ca/blog/brag-documents/

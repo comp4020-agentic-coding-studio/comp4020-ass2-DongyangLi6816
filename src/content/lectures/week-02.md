@@ -9,6 +9,7 @@ date: 2027-03-02
 teachers:
   - ingrid-solano
 mechanism: Pay for what you can count and people do the countable thing; the uncountable work is what the measure was for.
+seen: A team dashboard, where one chart of closed tickets is what the weekly review looks at.
 sources:
   - title: "Kerr, On the folly of rewarding A, while hoping for B (Academy of Management Journal, 1975)"
     url: https://journals.aom.org/doi/abs/10.5465/255378

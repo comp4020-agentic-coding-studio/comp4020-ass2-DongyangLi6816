@@ -9,6 +9,7 @@ teachers:
   - ingrid-solano
 slides: /decks/week-01/
 mechanism: Over half the variance in a rating is the rater, not the rated; calibration exists to squeeze that out, and it does so by giving your manager three minutes.
+seen: A calibration meeting, as each name on a projected list is given a rating.
 sources:
   - title: "Scullen, Mount and Goff, Understanding the latent structure of job performance ratings (Journal of Applied Psychology, 2000)"
     url: https://psycnet.apa.org/record/2000-16508-012

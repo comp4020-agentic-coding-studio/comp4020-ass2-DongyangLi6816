@@ -9,6 +9,7 @@ date: 2027-04-20
 teachers:
   - ingrid-solano
 mechanism: A packet counts launches; the multitask result says the countable task crowds out the rest, and maintenance is the rest.
+seen: A promotion packet, whose project list is sorted by launch date and has no entry for upkeep.
 sources:
   - title: "Holmstrom and Milgrom, Multitask principal-agent analyses (Journal of Law, Economics, and Organization, 1991)"
     url: https://academic.oup.com/jleo/article-abstract/7/special_issue/24/2194011

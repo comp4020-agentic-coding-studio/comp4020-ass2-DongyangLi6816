@@ -8,6 +8,7 @@ date: 2027-04-27
 teachers:
   - ingrid-solano
 mechanism: 'Being seen present triggers automatic inferences of "dependable" and "committed", and nobody who makes them knows they did.'
+seen: An open-plan office at six in the evening, where a manager passes the desks still occupied.
 sources:
   - title: "Elsbach, Cable and Sherman, How passive face time affects perceptions of employees (Human Relations, 2010)"
     url: https://journals.sagepub.com/doi/abs/10.1177/0018726709353139
