@@ -197,3 +197,31 @@ the rule the first entry proposed.
 **Promotion.** This lesson has now recurred, which is the bar the harness
 sets. Proposed for `CLAUDE.md`, stack facts: a frontmatter scalar that
 contains `: ` is written as a folded block or a quoted string, never plain.
+
+## The roles existed and could not be called
+
+**What happened.** Three role definitions were written to `.claude/agents/`,
+the `.gitignore` exception was verified with `git check-ignore`, the work
+order was written, and the dispatch failed: `Agent type 'page-reader' not
+found. Available agents: claude, claude-code-guide, Explore,
+general-purpose, Plan, statusline-setup`. Twice, identically. Claude Code
+reads `.claude/agents/` when a session starts; this session started before
+the directory existed, so its roster was fixed without them.
+
+**What it cost.** About five minutes and one wrong assumption, with the
+deadline twenty-one hours out. The plan had the role files and their first
+dispatch in the same block, which only works if a file written at 14:30 is
+callable at 14:45. Nothing was lost — the captures, the sealed prediction
+and the work order all survive a restart, because every one of them is a
+file.
+
+**What would have caught it earlier.** Writing down the falsifier before
+dispatching, which the harness already asks for. "The role is defined"
+and "the role can be called" are two claims, and only the second one is
+the one that matters; `ls .claude/agents/` cannot tell them apart. The
+check that can is a dispatch, and it needed to come first with a
+throwaway role rather than with the evening's real work behind it.
+
+**Promotion.** Rule, for `CLAUDE.md` if it recurs: a new agent definition
+is not available until the session restarts, so dispatch a trivial one to
+prove the roster reloaded before writing the work order that depends on it.
