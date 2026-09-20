@@ -9,6 +9,7 @@ date: 2027-03-09
 teachers:
   - ingrid-solano
 mechanism: Subjective evaluation rewards influence over the evaluator, and the research says being liked moves a rating further than being impressive.
+seenAt: "The reviewer-nomination form, and the coffee in your skip-level's calendar just before it opens."
 sources:
   - title: "Prendergast, The provision of incentives in firms (Journal of Economic Literature, 1999)"
     url: https://www.aeaweb.org/articles?id=10.1257/jel.37.1.7

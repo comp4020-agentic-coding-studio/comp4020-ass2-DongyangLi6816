@@ -7,6 +7,7 @@ week: 10
 date: 2027-05-11
 teachers:
   - ingrid-solano
+seenAt: "The layoff spreadsheet, sorted by function, cost and headcount target. No trick reaches it."
 sources:
   - title: "Meta to cut five percent of staff as low performers (Fortune, January 2025)"
     url: https://www.fortune.com/2025/01/14/meta-cut-5-percent-staff-lowest-performers-layoffs

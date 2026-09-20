@@ -9,6 +9,7 @@ date: 2027-05-18
 teachers:
   - ingrid-solano
 mechanism: When promotion runs on a signal everyone can produce, everyone produces it, nobody is distinguished by it, and the race is the equilibrium; modelled, measured in two law firms, and fading within years.
+seenAt: "A farewell post in the team channel from someone who resigned just before promotion season."
 sources:
   - title: "Landers, Rebitzer and Taylor, Rat race redux (American Economic Review, 1996)"
     url: https://ideas.repec.org/a/aea/aecrev/v86y1996i3p329-48.html

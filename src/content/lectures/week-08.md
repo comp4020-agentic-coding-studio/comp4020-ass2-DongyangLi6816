@@ -8,6 +8,7 @@ date: 2027-04-27
 teachers:
   - ingrid-solano
 mechanism: 'Being seen present triggers automatic inferences of "dependable" and "committed", and nobody who makes them knows they did.'
+seenAt: "The chat window at nine at night: a green dot, and one comment on every open document."
 sources:
   - title: "Elsbach, Cable and Sherman, How passive face time affects perceptions of employees (Human Relations, 2010)"
     url: https://journals.sagepub.com/doi/abs/10.1177/0018726709353139

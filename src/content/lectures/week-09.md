@@ -8,6 +8,7 @@ date: 2027-05-04
 teachers:
   - ingrid-solano
 mechanism: A reorg resets every relationship a rating depended on; what survives is being the one person whose removal breaks something visible.
+seenAt: "An incident channel where every question is answered by the same name."
 sources:
   - title: "Sucher and Gupta, Layoffs that don't break your company (Harvard Business Review, 2018)"
     url: https://hbr.org/2018/05/layoffs-that-dont-break-your-company

@@ -9,6 +9,7 @@ date: 2027-03-30
 teachers:
   - ingrid-solano
 mechanism: The announcement is the one artefact senior people read, and when a team result's source is ambiguous, credit goes by expectation, not contribution.
+seenAt: "A launch announcement: whose name sits at the top of the \"we shipped\" message, and who is listed under it."
 sources:
   - title: "Heilman and Haynes, No credit where credit is due (Journal of Applied Psychology, 2005)"
     url: https://pubmed.ncbi.nlm.nih.gov/16162063/

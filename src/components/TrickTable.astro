@@ -1,0 +1,80 @@
+---
+interface Props {
+  /** From the week's stand-up entry. Absent in the week with no trick. */
+  trick?: string;
+  /** From the lecture. Absent in the week with no mechanism. */
+  mechanism?: string;
+  seenAt: string;
+}
+
+const { trick, mechanism, seenAt } = Astro.props;
+---
+
+<table class="trick-table">
+  <thead>
+    <tr>
+      <th scope="col">The trick</th>
+      <th scope="col">The mechanism it exploits</th>
+      <th scope="col">Where you'd see it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="The trick" class:list={{ absent: !trick }}>{trick ?? "None this week."}</td>
+      <td data-label="The mechanism it exploits" class:list={{ absent: !mechanism }}>
+        {mechanism ?? "None this week."}
+      </td>
+      <td data-label="Where you'd see it">{seenAt}</td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  .trick-table {
+    width: 100%;
+    margin-block: var(--at-spacing-md) var(--at-spacing-lg);
+  }
+
+  .trick-table td {
+    vertical-align: top;
+  }
+
+  .absent {
+    color: var(--at-text-secondary);
+    font-style: italic;
+  }
+
+  /* Three columns of sentences do not fit 390px, and scrolling sideways hides
+     the columns past the first. Each cell becomes a block that carries its own
+     column name. The header row is hidden visually, not removed, so a screen
+     reader still gets the column headers. */
+  @media (max-width: 40rem) {
+    .trick-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .trick-table,
+    .trick-table tbody,
+    .trick-table tr,
+    .trick-table td {
+      display: block;
+      width: 100%;
+    }
+
+    .trick-table td::before {
+      content: attr(data-label);
+      display: block;
+      color: var(--at-text-secondary);
+      font-style: italic;
+    }
+
+    .trick-table td {
+      padding-inline: 0;
+    }
+  }
+</style>

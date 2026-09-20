@@ -8,6 +8,7 @@ date: 2027-03-16
 teachers:
   - ingrid-solano
 mechanism: Self-ratings run half a standard deviation above the manager's, and the summary that reaches the room keeps the numbers and drops the sentences.
+seenAt: "A self-review bullet with a percentage in it and no link to where the number came from."
 sources:
   - title: "Harris and Schaubroeck, A meta-analysis of self-supervisor, self-peer, and peer-supervisor ratings (Personnel Psychology, 1988)"
     url: https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1744-6570.1988.tb00631.x
