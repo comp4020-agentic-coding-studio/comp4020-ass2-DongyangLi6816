@@ -15,6 +15,20 @@ build.
 - When a check fails, read its output before you change anything.
 - Never commit a red state.
 
+## When to hand work to another agent
+- **Small task, and I know how to do it --- do it here.** The handoff costs
+  about the same whether the job is two hundred lines or two, so on a small job
+  that fixed cost is the whole cost.
+
+- **Large exploration, small conclusion --- hand it off.** A search across many
+  files, a long debugging chain, a survey of what already exists: the part worth
+  keeping is the answer, and everything it took to get there can stay out of
+  here.
+
+- **Roles hand off through files, never through me.** A role reads a work order
+  and writes one file; it never talks to another role. When a role misreads an
+  order, fix the order's format --- re-running it against the same words is
+  betting that the same input reads differently.
 
 ## Verifying your own work
 
