@@ -15,25 +15,6 @@ build.
 - When a check fails, read its output before you change anything.
 - Never commit a red state.
 
-## Ship something that runs before you write about it
-
-Research and design have no natural stopping point; a check does. Left alone you
-will keep refining a plan long past the point where a rough running version
-would have answered the question faster and more truthfully --- the bugs that
-matter live in the browser, not in the document describing it.
-
-- **The first deliverable is a running version, however rough.** When the thing
-  under discussion will eventually run, build the smallest version that does,
-  then write about it. If you genuinely need a document first, say so in one
-  line and wait for me.
-- **Say what would make it enough, before you start.** Any research or search
-  pass states its stopping condition up front and stops there. If it turns out
-  not to be enough, come back and say why rather than quietly continuing.
-- **"All", "complete", "detailed" and "thorough" mean the first bounded slice.**
-  Do the slice, name what you left out, let me ask for more. Never expand an
-  unbounded word into unbounded work.
-- **If I remove a constraint, keep one of your own.** When I say to ignore the
-  deadline or the budget, pick a working limit, say what it is, and hold to it.
 
 ## Verifying your own work
 
@@ -53,8 +34,6 @@ exists because a check here once passed while measuring a path nobody takes.
   thing I described, say so instead of reporting a number.
 - **Say what would falsify it, before you measure.** A result that could not
   have come out wrong is not evidence.
-- **Taste is mine.** Too fast, too thin, reads as the wrong kind of object:
-  none of that is settled by a measurement. Show me the state and ask.
 - **Read the page before you report it.** A page is written section by
   section, and every section introduces itself, so the finished page says
   most things twice. Before calling a page done, read the rendered page top
