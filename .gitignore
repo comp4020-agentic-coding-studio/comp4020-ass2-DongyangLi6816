@@ -28,3 +28,6 @@ mise.local.toml
 # marked, so a reader has to be able to open them.
 .claude/*
 !.claude/agents/
+
+# local pdf exports of the markdown deliverables
+*.pdf
