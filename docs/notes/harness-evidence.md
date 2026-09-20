@@ -225,3 +225,35 @@ throwaway role rather than with the evening's real work behind it.
 **Promotion.** Rule, for `CLAUDE.md` if it recurs: a new agent definition
 is not available until the session restarts, so dispatch a trivial one to
 prove the roster reloaded before writing the work order that depends on it.
+
+## The lecture-table check measured another repo's site, then a 500px window
+
+**What happened.** Verifying the new lecture-page table, I curled
+`localhost:4173/<base>/lectures/week-01/`, got `200`, and pointed Chrome at it.
+The page that loaded was "The Ashen Shrine", the crit1 repo's site: a preview
+server from another checkout (`lsof` showed its cwd as
+`comp4020-crit1-DongyangLi6816`) was holding the port and answered any path
+with a page. I then started this repo's own preview on a free port. Resizing
+the Chrome window to 390x844 next reported success, but `innerWidth` was 500:
+the same clamp recorded in "Headless Chrome reported a 500px viewport as
+390px". I had not re-read that entry before measuring. The real 390px numbers
+came from same-origin iframes of exactly 390 and 1920px, all twelve pages,
+which report `innerWidth` so the width is checked rather than assumed.
+
+Separately, a cleanup command of mine contained a stray `git checkout -p --`.
+It prompted with no stdin and discarded nothing, but it was an interactive
+discard of uncommitted work that I had typed by mistake.
+
+**What it cost.** Two measurements of the wrong thing, about ten tool calls,
+and no wrong claim reported, because each was caught by reading the page
+rather than the status code.
+
+**What would have caught it earlier.** A `200` says a server answered, not
+which site. The check has to assert something only this site says (the page
+`<title>`, or the `trick-table` element) and print `innerWidth` next to any
+width claim. A dev server left running from another repo is a standing hazard
+on this machine; the preview should start on a fresh port from this repo's
+`dist`, not reuse one.
+
+**Promotion.** Not promoted. Same proposal as the earlier 500px entry, which
+this repeats: a phone-width gate over the rendered pages in `check`.
