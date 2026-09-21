@@ -73,8 +73,8 @@ is normal; week 9 told you why.
 ## The packet
 
 Six parts, the same for every engineer. Read them in this order the first
-time: the numbers, then the announcement, then the peers,
-then the manager's notes, and the self-review last. Then read the
+time: the numbers, then where they sit, then the announcement, then the
+peers, then the manager's notes, and the self-review last. Then read the
 self-review again with the rest in mind. Most packets have something in
 them that this course has a week for. Some have a person in them the
 numbers cannot see. Deciding which is the job.
