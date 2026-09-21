@@ -39,3 +39,4 @@ The new setup does have one real advantage: the agents don't pollute each other.
  
 So I now use subagents only for big tasks with lots of exploring and a small conclusion, and one agent for small tasks. I wrote this rule into `CLAUDE.md` ([`51d1f21`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-DongyangLi6816/commit/51d1f21)).
  
+Later I asked for one last pass over the whole site against the spec. Claude followed the rules above and the main agent dispatched `page-reader`, which read the built pages and cost 482k tokens in its context. `page-reader` output a 600-word report to the main agent, which saved a lot of context window for later work ([`180bede`](https://github.com/comp4020-agentic-coding-studio/comp4020-ass2-DongyangLi6816/commit/180bede)).
